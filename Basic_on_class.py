@@ -298,20 +298,22 @@ print(len(a))
 
 a=input("Enter your name: ")
 print(len(a))
-'''
 
-  #split()
+
+   #split()
+   
 a="Monkey D Luffy"
 print(a.split("o"),a.split("f"))
 
    #replace()
+   
 a="Black leg Sanji"
 print(a.replace("Black leg","Vinsmoke"))
-
+'''
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-  #Ascii values
+  #Ascii values           
 '''
 
 A=65
@@ -320,7 +322,189 @@ Z=90
 a=97
 z=122
 
+'''           # max, min, ord, chr
+
+##print(max("Anbu"))   # To find max num values in Ascii
+##print(min("Anbu"))   # To find min values in Ascii 
+##print(ord('z'))      # To find ascii num value of a variable
+##print(chr(97))       # To find variable of a ascii num value
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                # .isalpha(), .isdigit(),  .isupper() & islower()            Date:05-02-2026
+
+a="python"
+b="18"
+c="SANJI"
 '''
+print(a.isalpha())
+print(b.isalpha())
+
+print(a.isdigit())
+print(b.isdigit())
+
+print(c.isupper())
+print(a.isupper())
+
+print(a.islower())
+print(c.islower())
+'''
+'''
+    # .join()
+print("0".join(b))
+   # .strip
+d= "          leo        "
+    
+print(d)
+print(d.strip())
+   # .count()
+print(a.count("y"))
+'''
+
+  # endwith(), startswith(), sep  
+'''
+e= "one piece is peak"
+print(e.endswith("peak"))  # to check True or Flase end with the word
+print(e.endswith("one"))
+
+print(e.startswith("one")) # to check True or Flase start with the word
+print(e.startswith("peak"))
+
+print("hi", "hello")
+print("hi", "hello",sep="_")
+
+print(c)
+print(c, end="!")       #joins in end without space
+''' 
+
+#______________________________________________________________________________________________________________________________________________________________________________________________
+
+      #Positive index
+
+f="python"
+
+'''                   # 0  1  2  3  4  5
+print(f[0])           # p  y  t  h  o  n
+print(f[1])           #-6 -5 -4 -3 -2 -1
+print(f[5])
+'''
+
+##print(f[6])  # error : out of range
+
+'''
+print(f[0:5])  #start &  end
+
+print(f[ :3])  #end  # end value not print in op : pytho
+print(f[ :6])
+
+print(f[ : ])  #
+
+print(f[3: ])  #start
+print(f[5: ])
+
+'''
+
+
+ # step
+'''
+print(f[0:6:1])    #straight   #last ratio is times to read
+print(f[6:0:-1])   #reverse
+print(f[0:5:2])                 # x-ple
+print(f[::2])
+'''
+
+#____________________________________________________________________________________________________________________________________________________________________________________________
+
+
+  #Negative  index                # p  y  t  h  o  n
+                                  #-6 -5 -4 -3 -2 -1
+'''
+print(f[-0])           # 0 or -0 == p
+print(f[-1])
+print(f[-6])   
+'''
+
+#print(f[-7])          # error : out of range
+'''
+print(f[-6 : -1])   #start and end
+print(f[-0 : -1])
+print(f[-6 : -3])
+
+print(f[ : -1])    #end  # end value not print in op : pytho
+print(f[ : -6])
+
+print(f[ : ])      # 
+
+print(f[-6 : ])    #start
+print(f[-1 : ])
+
+'''
+'''
+       # step
+
+print(f[-6:-1:1])   #straight
+print(f[-1:-6:-1])   #revrse
+'''
+       
+#____________________________________________________________________________________________________________________________________________________________________________________________
+
+         ## Conditional statement
+
+   ## if, else, elif
+
+'''
+if True:
+    print("true")
+else:
+    print("false")
+
+if False:
+    print("true")
+else:
+    print("false")
+'''
+  #pass oor fail
+'''
+a=int(input("ENTER YOUR MARK: "))
+
+if a>34:
+   print("Great you are pass")
+else:
+    print("Sorry you are fail")
+'''    
+
+   # To check odd or even
+'''
+a=int(input("Enter a Number: "))
+
+if a%2 == 1:
+    print("odd")
+else:
+    print("even")
+'''
+
+#____________________________________________________________________________________________________________________________________________________________________________________________
+
+
+ #                                                                           date:06-02-2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

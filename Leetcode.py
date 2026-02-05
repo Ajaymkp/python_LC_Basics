@@ -55,11 +55,70 @@ class solution(object):
         return chr(sum_t - sum_s)   # for here logic is t-s
     
 sol = solution()
-##print(sol.findTheDifference("abc", "abcd")) # so range t>s
+##print(sol.findTheDifference("abc", "abcd")) # have to range t>s
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-  #3 problem --                                 date: 05-02-2026
+  #3 problem -- Substring Search                                date: 05-02-2026
+
+'''
+
+The Logic (Sliding Window)
+Calculate the length of the needle (let's call it n) and haystack (let's call it h).
+
+1.Loop through the haystack from index 0 up to h - n.
+
+2. At each step i, check if the "slice" haystack[i : i+n] is equal to needle.
+
+3. If yes, return i.
+
+4. If the loop finishes without finding it, return -1.
+
+'''
+
+class solution(object):
+    def strStr(self, haystack, needle):
+        
+        """
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        """
+
+        # if needle is longer than haystack, it can't fit
+
+        if len(needle) > len(haystack):
+            return -1
+
+        # we only need to check up to the point where
+        # the needle can fit into the haystack
+
+        for i in range(len(haystack) - len(needle) + 1):
+
+            #check the slice of haystack against the needle
+            if haystack[i : i+ len(needle)] == needle:
+                return i
+            
+        return -1
+           
+
+sol = solution()
+##print(sol.strStr("sadbutsad", "sad"))
+##print(sol.strStr("leetcode", "leeto"))
+##print(sol.strStr("sad", "sadd"))
+'''                       
+           
+h="sadbutsad"
+n="sad"
+for i in range(len(h) - len(n) + 1):   # means in list last value not be print so +1 needed
+    
+    print(h[i : i+ len(n)])  # for here to print full sad     if not op will sa
+'''       
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+  #4 problem --                                date: 06-02-2026
 
 
 
@@ -75,30 +134,32 @@ sol = solution()
 
 
 
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+       #5 problem --                                date: 07-02-2026
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+       #6 problem --                                date: 08-02-2026
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+       #7 problem --                                date: 09-02-2026
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+       #8 problem --                                date: 10-02-2026
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+      #9 problem --                                 date: 11-02-2026
 
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+      #10 problem --                                date: 12-02-2026
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
