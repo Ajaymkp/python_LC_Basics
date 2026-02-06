@@ -471,7 +471,7 @@ else:
     print("Sorry you are fail")
 '''    
 
-   # To check odd or even
+   # To check odd or even                                          date:06-02-2026
 '''
 a=int(input("Enter a Number: "))
 
@@ -481,10 +481,116 @@ else:
     print("even")
 '''
 
+  # to check palindrome:                                       
+'''
+a=input("enter a word: ")
+print(a[ : : -1])
+
+if a == a[ : : -1] :
+    print("palindrome")
+
+else:
+    print("Is not palindrome")
+'''
+
+   # To check Leap year: #######
+'''
+a=int(input("Enter a year: "))
+
+if a%4 == 0 and a%100 != 0 or a%400 == 0:
+    print("Leap year")
+
+else:
+    print("It is not Leap year")
+'''
+    # To check vowels in or not
+'''    
+a=input("Enter A word: ").lower()
+b="aeiou"
+
+if "a" in a or "e"  in a or "i" in a or "o" in a or "u" in a:
+    print("vowels")
+else:
+    print("constants")
+
+'''
 #____________________________________________________________________________________________________________________________________________________________________________________________
 
 
- #                                                                           date:06-02-2026
+ # Nested if:
+ 
+'''
+m = int(input("Enter a Number: "))
+
+if m > -1 and m < 101:
+
+    if m > 34:
+        print("pass")
+    else:
+        print("fail")
+
+else:
+    print("Invali Input")
+
+'''
+'''
+a=int(input("Enter a year: "))
+
+if a>-1  :
+    if a%4 == 0  and a%100 != 0 or a%400 == 0:
+        print("Leap year")
+    else:
+        print("Is not a Leap Year")
+else:
+    print("invaali input")
+'''    
+'''
+i = int(input("Enter a Number: "))
+
+if i%3 == 0 :
+    if i%5 == 0:
+        print(i,"is divisible by both 3 and 5")
+
+    else:
+        print(i," is divisible by 3 only")
+else:
+    print(i," is not divisible by 3")
+'''
+
+    # graade terms
+
+##    90 - 100    A
+##    80 - 89     B
+##    70 - 79     C
+##    60 - 69     D
+##    50 - 59     E
+##    0  - 49     RA
+
+  # elif:
+
+j = int(input("Enter your Mark: "))
+
+if 90 <= j >= 100:
+    print("GRADE A")
+elif 80 <= j >= 89:
+
+    print("GRADE B")
+elif 70 <= j >= 79:
+    print("GRADE C")
+elif 60 <= j >= 69:
+    print("GRADE D")
+elif 50 <= j >= 59:
+    print("GRAADE E")
+elif 0 <= j >= 49:
+    print("RA")
+else:
+    print("Invaalid Mark")
+    
+
+#____________________________________________________________________________________________________________________________________________________________________________________________
+
+
+      #                                                                                            Date:07-02-2026
 
 
 
@@ -496,6 +602,45 @@ else:
 
 
 
+
+      
+#____________________________________________________________________________________________________________________________________________________________________________________________
+
+
+      #                                                                                            Date:08-02-2026
+
+
+
+
+
+
+
+
+      
+#____________________________________________________________________________________________________________________________________________________________________________________________
+
+      #                                                                                            Date:09-02-2026
+
+
+
+
+
+      
+#____________________________________________________________________________________________________________________________________________________________________________________________
+
+      #                                                                                            Date:10-02-2026
+
+
+
+
+
+      
+#____________________________________________________________________________________________________________________________________________________________________________________________
+
+      #                                                                                            Date:11-02-2026
+
+
+      
 
 
 

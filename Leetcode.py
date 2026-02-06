@@ -118,20 +118,29 @@ for i in range(len(h) - len(n) + 1):   # means in list last value not be print s
 
 
 
-  #4 problem --                                date: 06-02-2026
+  #4 problem --  Valid Anagram                              date: 06-02-2026
+'''This is the preferred solution for interviews. We count the frequency of every character.
+  If s has three 'a's, t must also have three 'a's.
+  Time Complexity: $O(N)$ (faster than sorting).
+  Space Complexity: $O(1)$ (since there are only 26 lowercase letters).
+'''
 
+class solution(object):
+    def isAnagaram(self, s, t):
 
-
-
-
-
-
-
-
-
-
-
-
+        if len(t) != len(s):
+            return False
+        count_s = {}
+        count_t = {}
+        
+        for char in s:
+            count_s[char] = count_s.get(char, 0) + 1
+        for char in t:
+            count_t[char] = count_t.get(char, 0) + 1
+        return count_t == count_s
+sol = solution()
+##print(sol.isAnagaram("anagram", "nagaram"))
+##print(sol.isAnagaram("cat", "tar"))
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
