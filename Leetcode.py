@@ -146,7 +146,28 @@ sol = solution()
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-       #5 problem --                                date: 07-02-2026
+       #5 problem --   Repeated Substring pattern                            date: 07-02-2026
+'''
+The "Clever" Approach (String Math)If a string s is made of a repeating pattern (like "abab"), then s is essentially P + P.
+  If we create a new string by adding s to itself (s + s), we get P + P + P + P.
+  If we remove the very first and very last characters of this new doubled string,
+  the original s (P + P) should still be visible somewhere in the middle.If s is not a pattern (like "aba"), this trick won't work.
+    Time Complexity: $O(N)$ (very fast).
+    Space Complexity: $O(N)$ (to store the doubled string).
+'''
+class solution(object):
+    def repeatedSubstringPattern(self, s):
+        doubled = s+s
+        trimmed = doubled[1:-1]
+        return s in trimmed
+        
+##print(solution().repeatedSubstringPattern("abab"))
+
+##s="abab"        
+##doubled = s+s
+##trimmed = doubled[1:-1]
+##print(doubled)
+##print(trimmed)
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

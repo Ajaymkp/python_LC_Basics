@@ -451,16 +451,27 @@ print(f[-1:-6:-1])   #revrse
    ## if, else, elif
 
 '''
-if True:
+if True:     # True == 1
     print("true")
 else:
     print("false")
 
-if False:
+if False:    # False == 0
     print("true")
 else:
     print("false")
+
 '''
+'''
+if "":           # " " == true  and "" == false without space false
+    print("True")
+else:
+    print("False")
+'''
+
+
+
+
   #pass oor fail
 '''
 a=int(input("ENTER YOUR MARK: "))
@@ -567,44 +578,170 @@ else:
 ##    0  - 49     RA
 
   # elif:
-
+'''
 j = int(input("Enter your Mark: "))
 
-if 90 <= j >= 100:
+if 90 <= j <= 100:
     print("GRADE A")
-elif 80 <= j >= 89:
+elif 80 <= j <= 89:
 
     print("GRADE B")
-elif 70 <= j >= 79:
+elif 70 <= j <= 79:
     print("GRADE C")
-elif 60 <= j >= 69:
+elif 60 <= j <= 69:
     print("GRADE D")
-elif 50 <= j >= 59:
+elif 50 <= j <= 59:
     print("GRAADE E")
-elif 0 <= j >= 49:
+elif 0 <= j <= 49:
     print("RA")
 else:
     print("Invaalid Mark")
-    
+'''
+#-----------------------------------------------------------------------------------------------
 
+   #  To find max value:                             #   Date:07-02-2026
+
+##a=int(input("Enter a number for a: "))                         
+##b=int(input("Enter a number for b: "))
+##c=int(input("Enter a number for c: "))
+'''
+if a<b:
+    print("b is greater than a")
+elif a>b:
+    print("a is greater than b")
+else:
+    print("a == b")
+'''
+'''
+if a>b and a>c:
+    print(a," is the highest value")
+elif b>a and b>c:
+    print(b, "is the highest value")
+elif c>a and c>b:
+    print(c, "is the highest value")
+else:
+    print("a,b and c are same")
+'''
+
+##un="sanji"
+##pas="abc123"
+'''
+a=(input("Enter a un for a: "))
+b=(input("Enter a pas for b: "))
+
+if a == un and b==pas:
+    print(" login successfull")
+elif b != pas and un==a:
+    print("password is incorrect")
+elif un!=a and b==pas:
+    print("username unmatched")
+else:
+    print("Both are wrong")
+'''
+
+#Assesment:
+   # 1. +,-,*,/,//,**,%
+   # 2. leap year
+   # 3. palindrome
+   # 4. odd or even
+   # 5. find the highest value
+   # 6. grade
+
+##a=int(input("Enater a num a: "))
+##b=int(input("Enter a num b: "))
+##c=(input("Enter a operator: "))
+   
+   ## 1. operator +,-,*,/,//,**,%:
+'''  
+if c == "+":
+    print("sum of a + b =: ",a + b )
+elif c == "-":
+    print("sutract of a - b: ",a - b)
+elif c == "*":
+    print("Multple of a*b: ",a*b)
+elif c == "**":
+    print("Power a**b: ",a**b)
+elif c == "/" and b==0:
+    print("undifined")
+elif c == "/":
+    print("Division of a/b: ",a/b)
+elif c == "//" and b==0:
+s    print("undefined")
+elif c == "//":
+    print("Division of a//b: ",a//b)
+elif c == "%" and b==0:
+    print("undefined")
+elif c == "%": 
+    print("Reminder of a%b: ",a%b)
+else:
+    print("Invaliid operator")
+'''
+## 2. leap year
+'''
+year = int(input("Enter a year: "))
+if year%4 == 0 or  year%100 != 0 and year%400 == 0:
+    print("Leap year")
+else:
+    print("Not Leap year")
+'''
+ ## 3. palindrome
+'''
+pal = input("Enter a word: ")
+rev = pal[::-1]
+if pal == rev:
+    print("plindrome")
+else:
+    print("Not Palindrome")
+'''
+ ## 4. odd or even
+'''
+oe = int(input("Enter a Num: "))
+
+if  oe%2 == 1:
+    print("odd")
+else:
+    print("even")
+'''
+
+
+ ## 5. find the maximum number
+'''
+x = int(input("Enter a num x: "))
+y = int(input("Enter a num y: "))
+z = int(input("Enter a num z: "))
+
+if z<x>y:
+    print("x is max")
+elif x<y>z:
+    print("y is max")
+elif x<z>y:
+    print("z is max")
+else:
+    print("all are same")
+'''
+ ## 6. Grade
+"""
+Mark = int(input("Enter your Mark: "))
+
+if 89 < Mark <101:   #90-100
+    print("Grade A")
+elif 79 < Mark < 90: #80-89
+    print("Grade B")
+elif 69 < Mark < 80: #70-79
+    print("Grade C")
+elif 59 < Mark < 70: #60-69
+    print("Grade D")
+elif 49 < Mark < 60: #50-59
+    print("Grade E")
+elif 34 < Mark < 50: #35-49
+    print("pass")
+elif -1 < Mark < 35: #0-34
+    print("Fail")
+else:               
+    print("Invalid input")
+"""
 #____________________________________________________________________________________________________________________________________________________________________________________________
 
-
-      #                                                                                            Date:07-02-2026
-
-
-
-
-
-
-
-
-
-
-
-
-      
-#____________________________________________________________________________________________________________________________________________________________________________________________
 
 
       #                                                                                            Date:08-02-2026
