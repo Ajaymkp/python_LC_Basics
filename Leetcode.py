@@ -171,7 +171,49 @@ class solution(object):
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-       #6 problem --                                date: 08-02-2026
+       #6 problem --   Move Zeroes                             date: 08-02-2026
+'''
+This is a classic "Two Pointer" problem. The requirement to do this in-place (without creating a new array) is the tricky part.
+
+We use two pointers, let's call them L (Left) and R (Right).
+
+L keeps track of where the next non-zero number should go.
+
+R scans through the array looking for non-zero numbers.
+
+The Algorithm
+Initialize L = 0.
+
+Iterate through the array with R from 0 to the end.
+
+If nums[R] is not zero:
+
+Swap nums[L] and nums[R].
+
+Move L forward (L += 1).
+
+If nums[R] is zero, just do nothing and let R move forward.
+
+By the end, all non-zero numbers are pushed to the left (maintained in order), and all zeros are naturally pushed to the right.
+
+
+'''
+
+class solution(object):
+    def moveZeroes(self, nums):
+        
+        L = 0
+        for R in range(len(nums)):
+            if nums[R] != 0:
+                nums[L], nums[R] = nums[R], nums[L]
+                L += 1
+      # return nums          #for seeing op in op but not needed this question
+sol = solution()    
+##print(sol.moveZeroes([0,1,0,3,12]))        
+ 
+
+
+    
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
        #7 problem --                                date: 09-02-2026
