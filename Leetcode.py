@@ -216,7 +216,34 @@ sol = solution()
     
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-       #7 problem --                                date: 09-02-2026
+       #7 problem --    Plus One                            date: 09-02-2026
+'''
+This problem is all about handling the "Carry" operation in math.
+
+Think about how you do addition on paper:
+
+You start from the last digit (the right side).
+
+If the digit is 0-8, you just add 1 and stop.
+
+If the digit is 9, it becomes 0, and you carry the 1 to the next left digit.
+
+If you run out of digits (like 99 becoming 100), you add a 1 at the front.
+
+'''
+
+                                        # addtion but the core rules and op == [1,0,0]
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        for i in range(len(digits)-1,-1,-1):
+            if digits[i] < 9:
+                digits[i] += 1
+                return digits
+            digits[i]=0
+        return [1] + digits
+sol=Solution()
+##print(sol.plusOne([9,9]))
+
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

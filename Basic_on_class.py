@@ -515,16 +515,16 @@ else:
     print("It is not Leap year")
 '''
     # To check vowels in or not
-'''    
+'''   
 a=input("Enter A word: ").lower()
-b="aeiou"
+
 
 if "a" in a or "e"  in a or "i" in a or "o" in a or "u" in a:
     print("vowels")
 else:
     print("constants")
-
 '''
+
 #____________________________________________________________________________________________________________________________________________________________________________________________
 
 
@@ -749,13 +749,121 @@ else:
 
 #____________________________________________________________________________________________________________________________________________________________________________________________
 
-      #                                                                                            Date:09-02-2026
+      #       single line if                                                                                     Date:09-02-2026
+
+# odd or even
+##a=int(input("enter a: "))
+##if a%2==0:
+##    print("even")
+##else:
+##    print("odd")
+
+   # sinle line odd or even
+##q=int(input("enter q: "))
+##q = "even" if q%2==0 else "odd"
+##print(q)
+
+   #divisible by 3 and 5   single line
+
+##d=int(input("Enter d: "))
+##d = ("divisible by 3 and 5" if d%5==0 else "divisible by 3 only") if d%3==0 else " not by 3"
+##print(d)
+
+#____________________________________________________________________________________________________________________________________________________________________________________________
 
 
+                #3 for loop
+'''
+##for i in range(5):  #end
+##    print(i)
+
+##for i in  range(3,5):  #stadn, ert 
+##    print(i)
+##for i in range(0,10,2):               ## (start,end("but last vlue not print like index"), step)
+##    print(i)
+##
+##for i in range(10,0,-1): 3 -1        #for reverse print also like index
+##    print(i)
+
+n=int(input("Enter n: "))
+for i in range(0,n,2):
+    print(i)
+'''
+
+ #string
+'''
+for i in "sanji":
+    print(i)
+
+a="luffy"
+for j in a:
+    print(j)
+
+str = input("Enter aa string: ")
+for k in str:
+    print(k)
+'''
+
+##z="python"
+##rev = z[::-1]
+
+##for l in rev:
+##    print(l)
+
+ #  string reverse iterate
+'''
+a="python" 
+for i in range(len(a)-1,-1,-1):  # here do hte reverse
+   print(a[i])
+'''
+ #     another method
+'''
+a="python"
+for i in range (1,(len(a)+1),1         0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ):
+    print(a[-i])           # here do the reverse        
+'''
+
+        # Tables
+    
+##t=(int(input("Enter a num: ")))
+##for i in range(1,11):
+##    print(i, "*", t,"=",i*t)
+
+        # print even numbers only
+    
+##e=(int(input("Enter a num: ")))
+##for i in range(e):
+##    if i%2 == 0:     # if i%2==1 , it will print odd nums only
+##        print(i)
 
 
+       #sum of numbers:                             
+                                    #if n=5 op == 15     0+0 = 0   #back process
+                                                              #0+1= 1
+                                                                   #1+2= 3
+                                                                       # 3+3= 6
+                                                                             #6+4= 10
+                                                                                 # 10+5=15
+##n=int(input("enter  num: "))              
+##count=0
+##for i in range(1,n+1):
+##    count = count+i
+##    print(count)
+##
+                                                                                 
+    
+         # counting vowels
+'''
+a=input("Enter a word: ").lower()
+count = 0
+for i in a:
+    #if "a" in i or "e" in i or "i" in i or "o" in i or "u" in i:
+    # or
+    if i in "aeiou":
+        count= count+1       # count+=1
+print(count)
+'''  
 
-      
 #____________________________________________________________________________________________________________________________________________________________________________________________
 
       #                                                                                            Date:10-02-2026
