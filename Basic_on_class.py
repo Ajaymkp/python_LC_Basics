@@ -864,15 +864,150 @@ for i in a:
 print(count)
 '''  
 
+
+
 #____________________________________________________________________________________________________________________________________________________________________________________________
 
-      #                                                                                            Date:10-02-2026
+      #   Assesment: only explanation                                                                         Date:10-02-2026
+
+###       
+
+#1. factorial  # self made
+
+'''
+f=int(input("Enter a num: "))
+fac = 1
+for i in range(f,0,-1):
+    fac=i*fac
+print("Factorial of", f, ":", fac) 
+'''   
+    
+#2. perfect number {ex: 6,8,28,128,426
+             #1 + 2 + 3 = 6. and 1,2,3 are divisior of 6           # so 6 is perfect number
+             #1 + 2 + 4 + 7 + 14 = 28. 1,2,4,7,14 are divisior of 28  # so 28 is the perfect number
+'''
+p=int(input("Enter a num: "))
+count=0
+for i in range(1,p):
+    if p%i == 0:
+        count+=i
+
+if count == p:
+        print("perfect number")
+else:
+        print("Not")
+'''        
+
+ #3. Armstrong Number:
+'''
+153 (3 digits):Calculate $1^3 + 5^3 + 3^3$.$1 + 125 + 27 = 153$.Since it matches, 153 is an Armstrong number.
+9474 (4 digits):Calculate $9^4 + 4^4 + 7^4 + 4^4$.$6561 + 256 + 2401 + 256 = 9474$.Since it matches, 9474 is an Armstrong number.
+10 (2 digits):Calculate $1^2 + 0^2$.$1 + 0 = 1$.Since $1$ does not equal $10$, 10 is not an Armstrong number.
+Key Facts:
+1. 0-9 are armstrong numbers
+2. there is no two digits are armstrong numbers
+'''
+'''
+n=int(input("Enter a num: "))
+s=str(n)
+digit=len(s)
+count=0
+for i in s:
+    count= count+int(i)**digit
+if count == n:
+    print("Armstrong Numer")
+else:
+    print("Not Armstrong numer")
+'''
+
+#4. sum of digits:
+'''
+a=int(input("Enter a num"))
+s=str(a)
+count=0
+
+for i in s:
+    count=count+int(i)
+print("sum of digits: ",count)
+'''
+ #5. fibonacci series
+                                   #F_n = F_{n-1} + F_{n-2}
+
+'''
+The Fibonacci series is a sequence of numbers where each number is the sum of the two preceding ones. It usually starts with 0 and 1.
+
+1. The Sequence
+The series progresses like this: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...    
+'''
+                                               # a,b = b, a+b
+                                                     
+'''                                                      
+f=int(input("Enter a num: "))
+a=0
+b=1
+for i in range(1,f+1):
+    print(a)
+    a,b=b,a+b
+'''
+
+  # reverse string:
+'''
+n="python"
+a=""
+for i in n:
+    a=i+a
+print(a)
+'''
+
+## assessmennt:
+
+#fascinating number:            (192,219,273,327)
+
+'''
+ 192
+ Step 1: 192 \times 2 = 384
+ Step 2: 192 \times 3 = 576
+ Step 3: Concatenate them: 192384576
+ Result: This sequence contains 1, 2, 3, 4, 5, 6, 7, 8, and 9 exactly once. Therefore, 192 is a fascinating number.
+'''
+n=int(input("Enter n: "))
+a = n*2
+b = n*3
+fas=(str(n)+str(a)+str(b))
+f="123456789"
+
+for i in range(fas):
+    if i in f:
+        f=-i  # not finished
+
+
+##print(fas)
+# 3. prime number:2,3,5,7,11,13,17
+
+#n=int(input("Enter n: "))
+'''
+if n<2:
+    print("not prime")
+elif n == 2 or n==3:
+    print("prime")
+elif n%2!=0 and n%3!=0:
+    print("prime")
+else:
+    print("not prime")
+'''
+'''
+prime=0
+
+for i in range(2,n+1):
+    if i==2 or i==3 or i%2!=0 and i%3!=0:
+        prime = i
+        print(prime)
+
+'''
 
 
 
 
-
-      
 #____________________________________________________________________________________________________________________________________________________________________________________________
 
       #                                                                                            Date:11-02-2026

@@ -247,7 +247,41 @@ sol=Solution()
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-       #8 problem --                                date: 10-02-2026
+       #8 problem --  sighn of the product of an array                  date: 10-02-2026
+   
+'''
+This problem has a trap! You might be tempted to actually multiply all the numbers together, but if the array is large, the product becomes huge and can cause overflow errors (or just be very slow).
+
+Instead, we just need to track the sign.
+
+The Logic (No Math Required)
+Check for Zero: If we see a 0, the entire product becomes 0. We can stop and return 0 immediately.
+
+Count Negatives:
+
+If there is an even number of negatives (e.g., -2 * -3 = 6), the result is Positive (1).
+
+If there is an odd number of negatives (e.g., -2 * -3 * -4 = -24), the result is Negative (-1).
+'''
+
+class Solution():
+    def arraySign(self,nums:List[int]) -> int:
+        sign = 1
+        for i in nums:
+            if i==0:
+                return 0
+            if i<0:
+                sign = -sign
+        return sign
+
+print(Solution().arraySign([-1,-1,-1,-1]))
+print(Solution().arraySign([-1,-1,-1]))
+print(Solution().arraySign([-1,-2,0,1,2,3,4]))
+
+
+
+
+
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
