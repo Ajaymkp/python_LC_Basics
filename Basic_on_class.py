@@ -960,7 +960,6 @@ print(a)
 '''
 
 ## assessmennt:
-
 #fascinating number:            (192,219,273,327)
 
 '''
@@ -969,16 +968,7 @@ print(a)
  Step 2: 192 \times 3 = 576
  Step 3: Concatenate them: 192384576
  Result: This sequence contains 1, 2, 3, 4, 5, 6, 7, 8, and 9 exactly once. Therefore, 192 is a fascinating number.
-'''
-n=int(input("Enter n: "))
-a = n*2
-b = n*3
-fas=(str(n)+str(a)+str(b))
-f="123456789"
-
-for i in range(fas):
-    if i in f:
-        f=-i  # not finished
+'''  # completed
 
 
 ##print(fas)
@@ -1005,9 +995,6 @@ for i in range(2,n+1):
 
 '''
 
-
-
-
 #____________________________________________________________________________________________________________________________________________________________________________________________
 
       #                                                                                            Date:11-02-2026
@@ -1015,22 +1002,261 @@ for i in range(2,n+1):
 
       
 
+#fascinating number:            (192,219,273,327)
+
+'''
+ 192
+ Step 1: 192 * 2 = 384
+ Step 2: 192 * 3 = 576
+ Step 3: Concatenate them: 192384576
+ Result: This sequence contains 1, 2, 3, 4, 5, 6, 7, 8, and 9 exactly once. Therefore, 192 is a fascinating number.
+'''
+'''
+n=int(input("Enter n: "))
+a = n*2
+b = n*3
+fas=(str(n)+str(a)+str(b))
+digit=int(fas)
+f=(123456789)
+if len(fas) != 9:
+    print("not fascinating number")
+'''
+##for i in range(fas):
+##    
+##    if i in f:
+##        f=-i  # not finished
+##print(f)
 
 
 
+#####   * pattern ########
+
+# 1
+'''
+for i in range(5):
+    print("*")
+
+# 2
+
+for i in range (5):
+    print("*",end="")
+for i in range(5):    # inside of range (5 == 1,6)    bcz 5=01234, 1,6= 12345  
+    print("*",end=" ")
+'''
+# 3
+n=int(input("Enter a num: "))
+'''
+
+for i in range(n):                # based on row to print "*"
+    for j in range(n):            # based on column to print "*"
+        print("*",end=" ")
+    print()
+'''
+
+# 4    12345
+
+'''
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        print(i,end=" ")
+    print()
+    
+# 5
+
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        print(j,end=" ")
+    print()  
+'''
+#6     reverse 54321
+'''    
+for i in range(n,0,-1):
+    for j in range(1,n+1):
+        print(i,end=" ")
+    print()
+    
+#7
+    
+for i in range(1,n+1):
+    for j in range(n,0,-1):
+        print(j,end=" ")
+    print() 
+'''
+  
 
 
 
+# 8  op:
+'''
+##         * * * * *
+##         * * * * 
+##         * * *  
+##         * * 
+##         * 
+  
+for i in range(n):
+    for j in range(i,n): 
+        print("*",end="")
+    print()
+    
+# 9   op:
+##         *
+##         * *
+##         * * *
+##         * * * *
+##         * * * * *
 
-
-
-
-
-
-
-
-
-
+for i in range(n):
+    for j in range(i+1):
+        print("*",end="")
+    print()
+'''    
    
+# 10  op:
+##           1 1 1 1 1
+##           2 2 2 2
+##           3 3 3
+##           4 4
+##           5
+'''
+for i in range(1,n+1):
+    for j in range(i,n+1): 
+        print(i,end=" ")
+    print()
+
+# 11    op:
+##             1
+##             2 2
+##             3 3 3
+##             4 4 4 4
+##             5 5 5 5 5
+    
+for i in range(1,n+1,):
+    for j in range(i):
+        print(i,end=" ")
+    print()
+'''
+# 12  op:
+#    1
+#    2 3
+#    4 5 6
+#    7 8 9 10
+
+'''
+
+a=1 
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(a,end=" ")
+        a+=1
+    print()
+'''
+    ### reverse
+
+# 14  Ascii
+'''
+a=65
+for i in range(1,n+1):
+    for j in range(1,i+1): 
+        print(chr(a),end=" ")
+        a+=1
+    print()
+   
+# 15
+
+b=90
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(chr(b),end=" ")
+        b-=1
+    print()
+'''
+
+  ### 16 op:
+##                  *
+##                * *
+##              * * *
+##            * * * *
+##          * * * * *
+'''
+for i in range(1,n+1):
+    for j in range(1,n+1-i):
+        print(" ",end=" ")
+    for k in range(1,i+1):
+        print("*",end=" ")
+    print()
+'''
+'''
+  ## 17 op:
+##             * * * * *
+##               * * * *
+##                 * * *
+##                   * *
+##                     *
+                      
+for i in range(1,n+1):
+    for j in range(1,i):
+        print(" ",end=" ")
+    for k in range(n+1 - i):
+        print("*",end=" ")
+    print()
+'''
+
+# 18. diamond [first for triangle AND second for flip triangle]
+
+               # op:
+               
+##                     * * 
+##                   * * * * 
+##                 * * * * * * 
+##               * * * * * * * * 
+##             * * * * * * * * * * 
+##             * * * * * * * * * * 
+##               * * * * * * * * 
+##                 * * * * * * 
+##                   * * * * 
+##                     * * 
+
+for i in range(1,n+1):
+    
+    for j in range(1,n+1-i):
+        print(" ",end=" ")
+        
+    for k in range(1,i+1):
+        print("* *",end=" ")
+ 
+##    for m in range(1,n+1-i):
+##        print(" ",end=" ")
+
+    print()
+    
+for o in range(1,n+1):
+    
+    for p in range(1,o):
+        print(" ",end=" ")
+        
+    for q in range(n+1-o):
+        print("* *",end=" ")
+
+    print()
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
