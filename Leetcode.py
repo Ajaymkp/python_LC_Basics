@@ -27,7 +27,12 @@ class Solution(object):
 sol = Solution()
 ##print(sol.mergeAlternately("abcd", "xyz"))
 ##print(sol.mergeAlternately("Mne  uf", "okyDLfy"))
-
+'''
+word1="Mne  uf"
+word2="okyDLfy"
+max_len = max(len(word1), len(word2))
+print(max_len)
+'''
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     #2 problem -- "Merge Strings"                                date: 04-02-2026
@@ -332,23 +337,57 @@ class Solution():
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-      #11 problem --                                date: 13-02-2026
+      #11 problem --  Romn to Integer                              date: 13-02-2026
 
+class Solution():
+    def romanToInt(self,s :str) -> int:
+        
+        roman = {"I" : 1, "V" : 5, "X" : 10, "L" : 50, "C":100, "D" : 500, "M" : 1000}
 
+        Total=0
 
-
-
+        for i in range(len(s)):
+            if i+1 < len(s) and roman[s[i]] < roman[s[i+1]]:
+                Total -= roman[s[i]]
+            else:
+                Total += roman[s[i]]
+        return Total
+    
+##print(Solution().romanToInt("IV"))
+##
+##print(Solution().romanToInt("MM"))
 
     
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    #12 problem --                                date: 14-02-2026
+    #12 problem --   Length of Last Word                             date: 14-02-2026
 
+class Solution():
+    def lengthOfLastWord(self,s:str) -> int:
+        count=0
+        for i in range(len(s)-1,-1,-1):     # len(s)-1 means [] index starts at 0,1,2,3 so len(s) means out of range 
+            if s[i] == " ":
+                if count > 0:
+                    return count
+            
+            else:
+                count+=1
+                
+        return count
 
+print(Solution().lengthOfLastWord("luffy is sill joyboy"))
+print(Solution().lengthOfLastWord("joyboy"))
 
+# Another Method:
 
+'''            
+class Solution():
+    def lengthOfLastWor(self,s:str) -> int:
+        return len(s.strip().split()[-1])
+print(Solution().lengthOfLastWor("luffy is sill joyboy"))
+'''
     
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

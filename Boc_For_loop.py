@@ -130,7 +130,7 @@ for i in range(1,n+1):
         a+=1
     print()
 '''
-    ### reverse
+
 
 # 14  Ascii
 '''
@@ -281,37 +281,6 @@ for i in range(n):
 #
 print("__________________")
 
-##   op:
-##       * * * * * 
-##       * * * *  
-##       * * *   
-##       * *    
-##       *
-
-for i in range(n):
-    for j in range(n):
-        if j < n-i:
-            print("*",end=" ")
-        else:
-            print(" ",end=" ")
-    print()
-
-print("__________________")
-##   op:
-##       * * * * * 
-##       * * * *  
-##       * * *   
-##       * *    
-##       *   
-for i in range(n):
-    for j in range(n):
-        if j > n-i-1:
-            print(" ",end="")
-        else:
-            print("*",end=" ")
-    print()
-#
-print("__________________")
 
 ##   op:
 ##     * * * * * 
@@ -328,7 +297,17 @@ for i in range(n):
             print("*",end=" ")
     print()
 '''
-#
+# reverse
+
+for i in range(n):
+    for j in range(n):
+        if j < n-i-1:
+            print(" ",end=" ")
+        else:
+            print("*",end=" ")
+    print()
+
+
 '''
 print("__________________")
 
@@ -358,13 +337,13 @@ for i in range(len(s)):
 ##     * * * * * 
 ##     * * * * * * * 
 ##     * * * * * * * * *
-
+'''
 for i in range(n):
     for k in range(2*n):
         if k < 2*i +1:
             print("*",end=" ")
     print()
-
+'''
 print("__________________")
 
 ##n=int()input("Enter a num: ")
@@ -374,6 +353,7 @@ print("__________________")
 ##         * * * * * 
 ##       * * * * * * * 
 ##     * * * * * * * * *
+'''
 for i in range(n):
     for j in range(n):
         if j < n-i-1:
@@ -382,7 +362,7 @@ for i in range(n):
         if k < 2*i +1:
             print("*",end=" ")
     print()
-
+'''
 #____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                                                       Date: 13-02-2026

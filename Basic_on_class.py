@@ -985,15 +985,15 @@ elif n%2!=0 and n%3!=0:
 else:
     print("not prime")
 '''
-'''
+n=int(input())
 prime=0
 
 for i in range(2,n+1):
     if i==2 or i==3 or i%2!=0 and i%3!=0:
         prime = i
-        print(prime)
+        print(prime,end=", ")
 
-'''
+
 
 #____________________________________________________________________________________________________________________________________________________________________________________________
 
@@ -1011,16 +1011,32 @@ for i in range(2,n+1):
  Step 3: Concatenate them: 192384576
  Result: This sequence contains 1, 2, 3, 4, 5, 6, 7, 8, and 9 exactly once. Therefore, 192 is a fascinating number.
 '''
-'''
+
 n=int(input("Enter n: "))
 a = n*2
 b = n*3
 fas=(str(n)+str(a)+str(b))
-digit=int(fas)
-f=(123456789)
-if len(fas) != 9:
-    print("not fascinating number")
+c=fas.replace("0","")
+count=0
+
 '''
+for i in range(len(c)):
+    for j in range(i+1, len(c)):
+        if len(c) != 9 or c[i]==c[j]:
+            count+=1
+if count == 0:
+    print(n ,"is fascinating number")
+else:
+    print(n ,"is not fascinating number")
+'''
+### Another method        ## len(c) == 9 is optional
+
+if len(c)==9:
+    if ("1" in c) and ("2" in c) and ("3" in c) and ("4" in c) and ("5" in c) and ("6" in c) and ("7" in c) and ("8" in c) and ("9"in c):
+        print("Fascinating Number")
+else:
+    print("Not Fascinating")
+
 
 
 
