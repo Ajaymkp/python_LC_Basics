@@ -377,8 +377,8 @@ class Solution():
                 
         return count
 
-print(Solution().lengthOfLastWord("luffy is sill joyboy"))
-print(Solution().lengthOfLastWord("joyboy"))
+##print(Solution().lengthOfLastWord("luffy is sill joyboy"))
+##print(Solution().lengthOfLastWord("joyboy"))
 
 # Another Method:
 
@@ -390,19 +390,45 @@ print(Solution().lengthOfLastWor("luffy is sill joyboy"))
 '''
     
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+         # sunday Holiday but Monday did two                date: 15-02-2026
 
 
+ #13 problem --   To Lower case                            date: 16-02-2026
 
- #13 problem --                                date: 15-02-2026
+class Solution:
+    def toLowerCase(self, s: str) -> str:
+        l = s.lower()
+        return l
 
-
+##print(Solution().toLowerCase("Luffy"))
 
     
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- #14 problem --                                date: 16-02-2026
+ #14 problem --    Base Ball Game                          date: 16-02-2026
 
-    
+class Solution():
+    def callPoints(self, operations : List[str]) -> int:
+        record = []
+
+        for op in operations:
+
+            if op == "+":
+                new_score = record[-1] + record[-2]
+                record.append(new_score)
+
+            elif op == "D":
+                new_score = record[-1] * 2
+                record.append(new_score)
+
+            elif op == "C":
+                record.pop()
+
+            else:
+                record.append(int(op))
+        return sum(record)
+
+##print(Solution().callPoints(["5", "2","C","D","+"]))
 
 
 
