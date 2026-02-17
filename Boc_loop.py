@@ -537,7 +537,7 @@ else:
 
 # *** pattern:
 
-n=int(input())
+##n=int(input())
 i=1
 '''
 while i<=n:
@@ -584,8 +584,48 @@ while i<=n:
     print()
     i+=1
 '''
-#
 
+#      op:
+#     n
+#     o
+#     h
+#     t
+#     y
+#     p
+''''
+b="python"
+i=len(b)-1
+while i >= 0:
+    print(b[i])
+    i-=1
+'''
+
+#
+##     P 
+##     P Y 
+##     P Y T 
+##     P Y T H 
+##     P Y T H O 
+##     P Y T H O N
+'''
+p="PYTHON"
+i=0
+while i<len(p):
+    j=0
+    while j<i+1:
+        print(p[j],end=" ")
+        j+=1
+    print()
+    i+=1
+'''
+#
+##     P Y T H O N 
+##     P Y T H O 
+##     P Y T H 
+##     P Y T 
+##     P Y 
+##     P
+'''
 p="PYTHON"
 i=len(p)-1
 while i>=0:
@@ -595,28 +635,35 @@ while i>=0:
         j+=1
     print()
     i-=1
-
-#
-
-#
 '''
-p="PYTHON"
-i=-1
-while i<len(p):
-    j=-1
-    while j<i+1:
-        print(p[j],end=" ")
-        j+=1
-    print()
+
+# prime and palindrome:
+
+n=int(input("Enter a num n: "))
+count=0
+i=2
+
+b=""
+k=2
+while i < n:
+    a=str(i)
+    b=a[::-1]
+    while k < i:
+
+        if i%k==0:
+            count+=1
+        else:
+            count=count
+        k+=1
+
+    if b == a and count == 0:
+        print(i)
+    count, k, b = 0, 2, ""
     i+=1
-'''
+    
 
-#
-b="python"
-i=len(b)-1
-while i >= 0:
-    print(b[i])
-    i-=1
+
+
 
 #____________________________________________________________________________________________________________________________________________________________________________________________
 #                                                                                       Date: 18-02-2026
