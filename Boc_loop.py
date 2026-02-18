@@ -309,7 +309,7 @@ for i in range(n):
 
 
 '''
-print("__________________")
+##print("__________________")
 
 s = "python"
 ##  op:
@@ -344,7 +344,7 @@ for i in range(n):
             print("*",end=" ")
     print()
 '''
-print("__________________")
+##print("__________________")
 
 ##n=int()input("Enter a num: ")
 ## # op;
@@ -639,6 +639,7 @@ while i>=0:
 
 # prime and palindrome:
 
+'''
 n=int(input("Enter a num n: "))
 count=0
 i=2
@@ -648,10 +649,12 @@ k=2
 while i < n:
     a=str(i)
     b=a[::-1]
+    
     while k < i:
 
         if i%k==0:
             count+=1
+            break
         else:
             count=count
         k+=1
@@ -660,13 +663,96 @@ while i < n:
         print(i)
     count, k, b = 0, 2, ""
     i+=1
-    
-
+'''    
 
 
 
 #____________________________________________________________________________________________________________________________________________________________________________________________
 #                                                                                       Date: 18-02-2026
+
+ ### Jumping Stetement:
+
+ ### break     ### for loop:
+'''   
+for i in range(1,10):
+    if i==5:
+        break           ## stop the loop where condition meets
+    print(i)
+
+ ### Continue
+
+for i in range(1,10):
+    if i==5:
+        continue      ## skip where condition is True 
+    print(i)
+
+ ### pass
+
+for i in range(1,6):
+    pass             ## for skip the unfinished code
+
+print("Yowaimo")
+'''
+    ###While loop:
+
+  ### break
+'''
+i=0
+while i < 5:
+    if i == 3:
+        break
+    print(i)
+    i+=1
+
+   ### continue
+
+i=0
+while i < 5:
+    if i==3:
+        continue
+    print(i)
+    i+=1
+'''
+   ### pass
+'''
+i=0
+while i < 10:
+    i+=1
+    pass
+print("Ace")
+'''
+'''
+password="1234"
+i=3
+while i > 0:
+    n=(input("Enter a password: "))
+    if n == password:
+        print("Login Successfully")
+        break
+    else:
+        if i == 3:
+            print("Incorect Password and you have 2 more attemts")
+        elif i == 2:
+            print("Incorect Password and you have 1 more attemts")
+        elif i == 1:
+            print("Incorect Password and you have no more attemts")
+    i-=1
+'''
+
+ ### List
+
+a=[10,20,30,40,50]
+
+print(a[0])
+print(a[4])
+
+# print(a[5])  # error
+
+print(a[2:])   # start
+print(a[:3])   # end
+print(a[::2])  # step
+
+print(a[::-1])  # reverse or negative step
 
 
 

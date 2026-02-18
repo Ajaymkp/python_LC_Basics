@@ -458,9 +458,36 @@ class Solution:
 ##print(Solution().judgeCircle("R,L,U"))       
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- #16 problem --                                date: 18-02-2026
+ #16 problem --     Find Winner on a Tic Tac Toe Game                           date: 18-02-2026
 
+class Solution:
+    def tictactoe(self, moves: List[List[int]]) -> str:
+        rows=[0]*3
+        cols=[0]*3
+        daig1=0
+        daig2=0
 
+        for i, (r,c) in enumerate(moves):
+            val =1 if i%2 == 0 else -1
+
+            rows[r] += val
+            cols[c] += val
+
+            if r==c:
+                daig1 += val
+            if r+c == 2:
+                daig2 += val
+                
+        if abs(rows[r])==3 or abs(cols[c])==3 or abs(daig1)==3 or abs(daig2)==3:
+                return "A" if val == 1 else "B"
+
+        if len(moves) == 9:
+            return "Draw"
+    
+        return "Pending"
+
+print(Solution().tictactoe([[0,0],[2,0],[1,1],[2,1],[2,2]]))
+            
 
     
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
