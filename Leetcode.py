@@ -486,16 +486,37 @@ class Solution:
     
         return "Pending"
 
-print(Solution().tictactoe([[0,0],[2,0],[1,1],[2,1],[2,2]]))
+##print(Solution().tictactoe([[0,0],[2,0],[1,1],[2,1],[2,2]]))
             
 
     
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- #17 problem --                                date: 19-02-2026
+ #17 problem --   Robot bound in circle                             date: 19-02-2026
 
+class Solution():
+    def isRobotBounded(self, instructions : str) -> bool:
 
-    
+        directions = [(0,1), (1,0), (0,-1), (-1,0)]
+
+        x=0
+        y=0
+
+        facing = 0
+
+        for move in instructions:
+            if move == 'L':
+                facing = (facing - 1)%4
+            elif move == 'R':
+                facing = (facing + 1)%4
+            elif move == 'G':
+                x += directions[facing][0]
+                y += directions[facing][1]
+        return (x == 0 and y == 0) or facing !=0
+        
+##print(Solution().isRobotBounded("GGLLGG"))
+print(Solution().isRobotBounded("GG"))
+
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
  #18 problem --                                date: 20-02-2026
