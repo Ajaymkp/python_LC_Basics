@@ -971,7 +971,7 @@ print(a)
 '''  # completed
 
 
-# code in boc_for.py file
+# code in 2__for and while loop__statements.py file
 
 
 

@@ -515,25 +515,172 @@ class Solution():
         return (x == 0 and y == 0) or facing !=0
         
 ##print(Solution().isRobotBounded("GGLLGG"))
-print(Solution().isRobotBounded("GG"))
+##print(Solution().isRobotBounded("GG"))
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- #18 problem --                                date: 20-02-2026
+ #18 problem -- Richest Customer Wealth                               date: 20-02-2026
+
+class Solution():
+    def maxWealth(self, accounts: List[List[int]]) -> int:
+        max_wealth = 0
+        for i in accounts:
+            current_wealth = sum(i)
+            if current_wealth > max_wealth:
+                max_wealth = current_wealth
+        return max_wealth
+
+##print(Solution().maxWealth([[1,2,3],[3,2,1]]))
+
+    
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ #19 problem --    saturday i am leave   and forgot                        date: 21-02-2026
+
+               #  Matrix Diagonal Sum
+                               
+class Solution:
+    def diagonalSum(self, mat: List[List[int]]) -> int:
+
+        n = len(mat)
+        total = 0
+
+        for i in range(n):
+            total += mat[i][i]
+            if i != n-1-i:
+                total += mat[i][n-1-i]
+        return total
+
+print(Solution().diagonalSum([[1,2,3],[4,5,6],[7,8,9]]))
+print(Solution().diagonalSum([[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1]]))
+    
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ #20 problem --                      sunday hoiday but did it monday                            date: 22-02-2026
+
+ ### Spiral Matrix  
+
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        result = []
+        
+        # 1. Define the 4 boundaries
+        left, right = 0, len(matrix[0]) - 1
+        top, bottom = 0, len(matrix) - 1
+        
+        # 2. Keep going as long as the boundaries haven't crossed
+        while left <= right and top <= bottom:
+            
+            
+            # Step A: Go Left to Right along the Top row
+            for i in range (left,right+1):
+                result.append(matrix[top][i])
+            top += 1  # The top row is done, shrink boundary down
+            
+            # Step B: Go Top to Bottom along the Right column
+            for i in range(top,bottom+1):
+                refult.append(mtrix[i][right])
+            right -= 1 # The right col is done, shrink boundary left
+            
+            # THE TRAP: For non-square matrices, we might have already crossed boundaries.
+            # We must check if we still have a valid row and column before going backwards.
+            if left > right or top > bottom:
+                break
+                
+            # Step C: Go Right to Left along the Bottom row
+            for i in range(right,left-1,-1):
+                result.append(matrix[bottom][i])
+            bottom -= 1 # The bottom row is done, shrink boundary up
+            
+            # Step D: Go Bottom to Top along the Left column
+            for i in range(bottom,top-1,-1):
+                result.append(matrix[i][left])
+            left += 1  # The left col is done, shrink boundary right
+            
+        return result        
+
+
+    
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ #21 problem --       Set Matrix Zeroes                         date: 23-02-2026
+    
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        ROWS = len(matrix)
+        COLS = len(matrix[0])
+        rowZero = False # Tracks if the first row needs to be zeroed
+        
+        # STEP 1: Determine which rows/cols need to be zeroed
+        for r in range(ROWS):
+            for c in range(COLS):
+                if matrix[r][c] == 0:
+                    matrix[0][c] = 0   # Mark the column
+                    
+                    if r > 0:
+                        matrix[r][0] = 0 # Mark the row
+                    else:
+                        rowZero = True   # Special flag for the first row
+                        
+        # STEP 2: Zero out the matrix based on our marks in the first row/col
+        # We start at index 1 so we don't overwrite our flags yet!
+        for r in range(1, ROWS):
+            for c in range(1, COLS):
+                if matrix[0][c] == 0 or matrix[r][0] == 0:
+                    matrix[r][c] = 0
+                    
+        # STEP 3: Handle the first column
+        # If the top-left is 0, the whole first column must be 0
+        if matrix[0][0] == 0:
+            for r in range(ROWS):
+                matrix[r][0] = 0
+                
+        # STEP 4: Handle the first row
+        # If our special variable is True, the whole first row must be 0
+        if rowZero:
+            for c in range(COLS):
+                matrix[0][c] = 0
+    
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+ #22 problem --                                date: 24-02-2026
+
 
 
 
     
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- #19 problem --                                date: 21-02-2026
+
+
+
+
+
+
+
+
+ #23 problem --                                date: 25-02-2026
+
 
 
 
     
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- #20 problem --                                date: 22-02-2026
+
+
+
+
+
+
+ #24 problem --                                date: 26-02-2026
 
 
 
@@ -544,33 +691,59 @@ print(Solution().isRobotBounded("GG"))
 
 
 
+ #25 problem --                                date: 27-02-2026
 
 
 
 
+    
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ #26 problem --                                date: 28-02-2026
 
 
 
 
+    
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ #27 problem --                                date: 01-03-2026
 
 
 
 
+    
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ #28 problem --                                date: 02-03-2026
 
 
 
 
+    
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ #29 problem --                                date: 03-03-2026
 
 
 
 
+    
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ #30 problem --                                date: 04-03-2026
 
 
 
 
-
-
-
+    
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
