@@ -604,7 +604,13 @@ class Solution:
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
  #21 problem --       Set Matrix Zeroes                         date: 23-02-2026
-    
+
+'''    Imagine this matrix:
+[1, 1, 1]                                               op:      [1, 0, 1]          
+[1, 0, 1]                                                           [0, 0, 0]
+[1, 1, 1]                                                           [1, 0, 1]
+ '''
+
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
         """
@@ -618,19 +624,19 @@ class Solution:
         for r in range(ROWS):
             for c in range(COLS):
                 if matrix[r][c] == 0:
-                    matrix[0][c] = 0   # Mark the column
-                    
+                    matrix[0][c] = 0
+
                     if r > 0:
-                        matrix[r][0] = 0 # Mark the row
+                        matrix[r][0]
                     else:
                         rowZero = True   # Special flag for the first row
                         
         # STEP 2: Zero out the matrix based on our marks in the first row/col
         # We start at index 1 so we don't overwrite our flags yet!
-        for r in range(1, ROWS):
-            for c in range(1, COLS):
+        for r in range(1,ROWS):
+            for c in range(1,COLS):
                 if matrix[0][c] == 0 or matrix[r][0] == 0:
-                    matrix[r][c] = 0
+                    matrix[r][c] == 0
                     
         # STEP 3: Handle the first column
         # If the top-left is 0, the whole first column must be 0
@@ -643,14 +649,52 @@ class Solution:
         if rowZero:
             for c in range(COLS):
                 matrix[0][c] = 0
-    
+#----------------------
+
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        rows = len(matrix)
+        cols = len(matrix[0])
+        rowZero = False
+
+        for r in range (rows):
+            for c in range (cols):
+                if matrix[r][c] == 0:
+                    matrix[0][c] = 0
+                    if r>0:
+                        matrix[r][0]=0
+                    else:
+                        rowZero = True
+        for r in range (1,rows):
+            for c in range(1,cols):
+                if matrix[0][c] == 0 or matrix[r][0] == 0:
+                    matrix[r][c]=0
+        if matrix[0][0] == 0:
+            for r in range(rows):
+                matrix[r][0]=0
+
+        if rowZero:
+            for c in range(cols):
+                matrix[0][c]=0
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+ #22 problem --    Count Odd Numbers in an Interval Range        date: 24-02-2026
+
+class Solution:
+    def countOdds(self, low: int, high: int) -> int:
+        odd= (high - low) //2
+
+        if low % 2 != 0 or high % 2 !=0:
+            odd +=1
+        return odd
 
 
+odd= (9 - 8) //2
+print(odd)
 
-
- #22 problem --                                date: 24-02-2026
 
 
 
