@@ -595,7 +595,13 @@ m=[2,4,6,34,75,98,12]
 n=a[0]
 '''
 for i in m:
-    if i>n:
+    if i>n:             # -- Maximum number
+        n=i
+print(n)
+'''
+'''
+for i in m:
+    if i<n:                      # -- Smallest number
         n=i
 print(n)
 '''
@@ -605,8 +611,20 @@ print(n)
 
 
 
-
-
+## Assessment  ---  Second Largest Number
+'''
+a=[10,50,20,30,40]
+b=0
+c=0
+for i in a:
+    if i>b:
+        b=i
+print(b, "is the maximum value")
+for i in a:
+    if i>c and i<b:
+        c=i
+print(c, "is the second max value")
+'''
 
 
 
@@ -619,7 +637,146 @@ print(n)
 
 
 #____________________________________________________________________________________________________________________________________________________________________________________________
-#                                                                                       Date: 25-02-2026
+# Second Largest Number                                                                          Date: 25-02-2026
+
+a=[10,42,23,34,25]
+l=a[0]
+s=a[1]
+'''
+for i in range (len(a)):
+    if l<a[i]:
+        s=l
+        l=a[i]
+    elif s<a[i] and l!=a[i]:
+        s=a[i]
+print(s)       
+'''
+## Anangram
+'''
+a="heart"
+b="earth"
+
+print(sorted(a))
+print(sorted(b))
+
+if sorted(a) == sorted(b):
+    print("Anagram")
+else:
+    print("Not Anangram")
+'''
+
+##  if a= [0,1,2,0,3]                      op: -- [1,2,3,0,0]
+a=[0,1,2,0,3]
+b=[]
+c=[]
+'''
+for i in range(len(a)):
+    if a[i] != 0:
+        b.append(a[i])
+    else:
+        c.append(a[i])
+print(b+c)
+'''
+'''
+for i in a:
+    if i != 0:
+        b.append(i)
+    else:
+        c.append(i)
+print(b+c)
+'''
+
+x=0               # --- Another Method
+'''
+for i in range(len(a)):
+    if a[i]!=0:
+        a[i],a[x]=a[x],a[i]
+        x+=1
+print(a)
+'''
+
+a=[0,2,3,4,6,7,11,9,5]            # --- op:[2,7]  two pointer mens l and r
+a.sort()
+b=9
+'''
+l=0
+r=len(a)-1
+while l<r:
+    x=a[l]+a[r]
+    if x==b:
+        print([a[l],a[r]])
+        l+=1
+        #break
+    elif x<b:
+        l+=1
+    else:
+        r-=1
+'''
+a=[1,2,3,4]
+b=[3,4,5,6,7]
+c=[]
+'''
+for i in a:
+    for j in b:
+        if i==j and i!=c:
+            c.append(i)
+print(c)
+'''
+'''
+for i in a:
+    if i in b:
+        c.append(i)
+print(c)
+'''
+      #  0p: --- {1,2,3,4,5,6} union
+'''             
+a={1,2,3}
+b={4,5,6}
+c={}
+for i in a:
+    b.add(i)
+print(b)       
+'''
+ # intersection
+
+a={1,2,3}   
+b={3,4,5}
+'''
+c=set()
+for i in a:
+    if i in b:
+        c.add(i)
+print(c)
+'''
+# difference
+'''
+for i in b:
+    if i in a:
+        a.remove(i)      
+print(a)
+'''
+#symmetric_difference 
+'''
+c=set()
+
+for i in a:
+    if i  not in b:
+        c.add(i)
+for i in b:
+    if i not in a:
+        c.add(i)
+print(c)
+'''
+
+  # isdisjoint()
+'''
+a={1,2,3}
+b={4,5,6}
+
+print(a.isdisjoint(b))
+print(b.isdisjoint(a))
+'''
+
 
 
 

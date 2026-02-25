@@ -337,7 +337,7 @@ class Solution():
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-      #11 problem --  Romn to Integer                              date: 13-02-2026
+      #11 problem --  Roman to Integer                              date: 13-02-2026
 
 class Solution():
     def romanToInt(self,s :str) -> int:
@@ -551,8 +551,8 @@ class Solution:
                 total += mat[i][n-1-i]
         return total
 
-print(Solution().diagonalSum([[1,2,3],[4,5,6],[7,8,9]]))
-print(Solution().diagonalSum([[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1]]))
+##print(Solution().diagonalSum([[1,2,3],[4,5,6],[7,8,9]]))
+##print(Solution().diagonalSum([[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1]]))
     
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -692,8 +692,8 @@ class Solution:
         return odd
 
 
-odd= (9 - 8) //2
-print(odd)
+##odd= (9 - 8) //2
+##print(odd)
 
 
 
@@ -701,21 +701,32 @@ print(odd)
 
     
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ #23 problem --     Average Salary Excluding the Minimum and Maximum Salary                           date: 25-02-2026
 
-
-
-
-
-
-
-
-
- #23 problem --                                date: 25-02-2026
-
-
-
-
+class Solution:
+    def average(self, salary: List[int]) -> float:
+        s=0
+        salary.sort()
+        salary.pop(0)
+        salary.pop(len(salary)-1)
+        for i in salary:
+            s+=i
+        return s/len(salary)
+##print(Solution().average([20,10,30,40]))
     
+####   for large datasets respect to the time complexity
+'''
+class Solution:
+    def average(self, salary: List[int]) -> float:
+        # 1. Get the sum of the middle elements
+        total_sum = sum(salary) - min(salary) - max(salary)
+        
+        # 2. Get the count of the middle elements
+        count = len(salary) - 2
+        
+        # 3. Return the average (Total / Count)
+        return total_sum / count
+'''    
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
