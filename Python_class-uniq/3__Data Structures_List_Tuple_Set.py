@@ -784,7 +784,115 @@ print(b.isdisjoint(a))
 #____________________________________________________________________________________________________________________________________________________________________________________________
 #                                                                                       Date: 26-02-2026
 
+#Dictionary   ----  op; {1:1, 2:4, 3:27. 4:256}
+'''
+a=[1,2,3,4]
+b={}
+c=0
 
+for i in a:
+    c=i**i
+    b[i]=c
+print(b)
+'''
+#       op:        -- {'apple': 5, 'orange': 6, 'mango': 5, 'banana': 6}
+'''
+a=['apple', 'orange','mango','banana']
+b={}
+for i in a:
+    b[i]=len(i)
+print(b)
+'''
+
+# Op: -- {'b': 1, 'l': 2, 'a': 2, 'c': 1, 'k': 1, ' ': 2, 'e': 1, 'g': 1, 's': 1, 'n': 1, 'j': 1, 'i': 1}
+
+a="black leg sanji"
+x={}
+
+'''
+count=0
+for i in a:
+    if i in x:
+        x[i]+=1
+    else:
+        x[i]=1
+print(x)
+'''
+     ### another method but have duplicate keys --- but it works in dictionary
+count=0
+'''
+for i in a:
+    x[i]=a.count(i)
+print(x)
+'''        
+#  op:  -- {1:'a', 2:'b',3:'c', 4:'d'}
+a={'a':1, 'b':2,'c':3,'d':4}
+b={}
+x=1
+##c=a.keys()
+##print(c)
+'''
+for i in a:
+    b[x]=i
+    x+=1
+print(b)
+'''
+# another metjod
+'''
+for i in a.keys():
+    for j in a.values():
+        b[j]=i
+        print(b)
+'''
+# another method
+'''
+for i ,j in a.items():
+    b[j]=i
+print(b)
+'''
+ ### y.update(x) with out built-in methods.     --  {.union() }
+
+x={1:'a', 2:'b',3:'c', 4:'d'}
+y={5:'e', 6:'f',7:'g', 8:'h'}
+'''
+for i,j in y.items():
+    x[i]=j
+print(x)
+'''
+# .intersction() with out built-in methods.
+
+x={'a':1,'b':2,'c':3,'d':4}
+y={'c':6,'d':4,'e':5}
+z={}
+'''
+for i,j in x.items():
+    for k,l in y.items():
+        if i==k and j==l:
+            z[i]=j
+print(z)
+'''
+                             ##### Important for key and value   i in y === key
+'''
+for i,j in x.items():
+    if i in y and y[i]==j:                ## -- y[i]==j
+            z[i]=j
+print(z)
+ '''   
+# a.difference(b) with out built-in methods.
+
+a={'a':1,'b':2,'c':3}
+b={'c':3,'d':4,'e':5}
+'''
+for i,j in b.items():
+    if i in a and b[i]==j:
+        del a [i]
+print(a)
+'''
+#b.differnce(a)
+for i,j in a.items():
+    if i in b and a[i]==j:
+        del b [i]
+print(b)
 
 #____________________________________________________________________________________________________________________________________________________________________________________________
 #                                                                                       Date: 27-02-2026
