@@ -1,0 +1,31 @@
+#1  -- COMMUNICATION SKILLS ON CLASS                          -- DATE:24-02026
+
+
+#READING
+
+In today’s fast-paced IT industry, effective communication is just as important as technical expertise. While developers are primarily responsible for writing clean and efficient code, they are also expected to communicate clearly and professionally with team members, project managers, and clients. Poor communication can lead to misunderstandings, delays, and even project failures. Therefore, mastering both written and spoken communication is essential for long-term career growth.
+
+For instance, when reporting a technical issue, a developer must explain the problem in a structured and precise manner. This includes describing the environment in which the issue occurred, outlining the exact steps required to reproduce it, and specifying the expected and actual results. Attaching relevant screenshots, logs, or supporting documents further improves clarity and reduces confusion. Without these details, the team may struggle to identify and resolve the issue efficiently.
+
+Similarly, status update emails should be concise yet informative. A professional update typically includes completed tasks, ongoing activities, potential risks, and expected timelines. Clear subject lines, proper greetings, and polite closing statements reflect professionalism and respect. Using inappropriate language, informal expressions, or incomplete sentences can create a negative impression in a corporate environment.
+
+In addition, maintaining the correct tone in emails is extremely important. Since written communication lacks facial expressions and vocal cues, messages can easily be misinterpreted. Therefore, employees must choose their words carefully, avoid using all capital letters, and ensure that their message sounds respectful and constructive. Effective communication not only strengthens teamwork but also enhances productivity and organizational reputation.
+
+Ultimately, strong communication skills distinguish an average professional from an exceptional one. Continuous improvement in pronunciation, vocabulary, clarity, and confidence will help individuals succeed in interviews, workplace interactions, and client discussions. Every aspiring software professional should make communication excellence a priority in order to achieve sustainable career success.
+
+# MAIL FORMAT AND WHAT DO'S AND DON'TS
+#sending sample mail to mam
+
+----------------------------------------------------------------
+
+# day-2                               Date:26-022026
+
+# self intro prepare by format given
+
+# introducing Infront of all class members
+
+------------------------------------------------------------------------
+
+# day-3                               Date:28-02-2026
+
+#mock test

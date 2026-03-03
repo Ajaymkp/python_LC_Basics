@@ -761,30 +761,18 @@ class Solution:
     
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+ #25 problem --       Largest Perimeter Triangle                         date: 27-02-2026
+class Solution:
+    def largestPerimeter(self, nums: List[int]) -> int:
+        nums.sort(reverse=True)
 
+        for  i in range(len(nums)-2):
 
-
- #25 problem --                                date: 27-02-2026
-
-
-
-
-    
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
- #26 problem --                                date: 28-02-2026
-
-
-
-
-    
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
- #27 problem --                                date: 01-03-2026
-
+            if nums[i+1] + nums[i+2] > nums[i]:
+                return nums[i] + nums[i+1] +nums[i+2]
+        return 0
+##print(Solution().largestPerimeter([2,2,3]))
+        
 
 
 
@@ -792,21 +780,84 @@ class Solution:
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+ #problem --                                date: 28-02-2026
 
- #28 problem --                                date: 02-03-2026
-
-
+#### saturday -- leave
 
 
     
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
- #29 problem --                                date: 03-03-2026
+
+ # problem --                                date: 01-03-2026
+    
+###########sunday -- holiday
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
+ #26 problem --       Check If It Is a Straight Line                  date: 02-03-2026
 
+class Solution:
+    def checkStraightLine(self, coordinates: List[List[int]]) -> bool:
+
+        x0, y0 = coordinates[0]
+        x1, y1 = coordinates[1]
+
+        dx = x1 - x0
+        dy = y1 - y0
+
+        for i in range(2, len(coordinates)):
+            x, y = coordinates[i]
+
+            if dy * (x-x0) != dx * (y-y0):
+                return False
+        return True
+
+##print(Solution().checkStraightLine([[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]]))
+##print(Solution().checkStraightLine([[1,1],[2,2],[3,4],[4,5],[5,6],[7,7]]))
+    
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ #27 problem --  Add binary nums                              date: 03-03-2026
+
+     ##  Built-in methods
+'''
+class Solution():
+    def addBinary(self,a:str, b:str) -> str:
+        # int(string, 2) tells Python to read the string as a base-2 (binary) number
+        # bin() converts the resulting sum back into a binary string
+        # [2:] slices off the "0b" prefix that Python adds to binary strings
+        return bin(int(a,2) + int(b,2)) [2:]
+
+print(Solution().addBinary("1","111"))
+'''
+class Solution():
+    def addBinary(self,a:str, b:str) -> str:
+        result=[]
+        carry=0
+
+        i = len(a)-1
+        j = len(b)-1
+
+        while i>= 0 or j>= 0 or carry:
+            total = carry
+
+            if i >=0:
+                total += int(a[i])
+                i-=1
+            if j>=0:
+                total +=int(b[j])
+                j-=1
+
+            result.append(str(total  % 2))
+            carry = total // 2
+            #print(result,carry)
+        return "".join(result[ : :-1])
+    
+##print(Solution().addBinary("1","11")) 
     
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
