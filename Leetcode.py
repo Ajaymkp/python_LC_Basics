@@ -861,7 +861,53 @@ class Solution():
     
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- #30 problem --                                date: 04-03-2026
+ # 28 problem --     Multiply Strings like realtime                  date: 04-03-2026
+
+
+class Solution:
+    def multiply(self, num1: str, num2: str) -> str:
+        # Edge case: If either number is zero, the product is zero.
+        if num1=="0" or num2=="0":
+            return 0
+            
+        # Create an array of zeros to hold the result.
+        # Max possible length is len(num1) + len(num2)
+        result=[0]*(len(num1)+len(num2))
+        
+        # Loop backwards through both strings
+        for i in range(len(num1)-1,-1,-1):
+            for j in range(len(num2)-1,-1,-1):
+                
+                # Multiply the individual digits (converting a single char is allowed)
+                product = int(num1[i])*int(num2[j])
+                
+                # The indices where this product belongs in our result array
+                p1 = i+j     # The carry position
+                p2 = p1+1  # The current digit position
+                
+                # Add the product to whatever carry is already at p2
+                total = product + result[p2]
+                
+                # Update the current position with the ones digit of the total
+                result[p2] = total % 10
+                
+                # Add the tens digit (the carry) to the p1 position
+                result[p1]=total//10
+                
+        # The result array might have leading zeros (e.g., [0, 5, 6, 0, 8, 8])
+        # We need to find where the actual numbers start
+        start = 0
+        while len(result) > start and result[start]==0:
+            start+=1
+            
+        # Convert the remaining numbers to strings and join them
+        return "".join(map(str, result[start:]))
+
+print(Solution().multiply("12","12"))
+
+
+
+
 
 
 

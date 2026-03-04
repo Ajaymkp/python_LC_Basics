@@ -330,7 +330,7 @@ print(d,id(d))
 ## return              ----    (Back to the caller Doesn't read any after funtion code)
 
 
-
+'''
 def return_2():
     return "Ace"          # -- exit here
     return "sabo"          # -- doesn't read here   
@@ -346,7 +346,7 @@ def return_2():
     print("Ace" )         # -- exit here
     return "sabo"          # -- does read here   
 print(return_2())
-
+'''
 
 
 
@@ -355,13 +355,85 @@ print(return_2())
 
  # ____________________________________________________________________________________________________________________________________________________________________________________________
 
-#                                                                        Date: 04-03-2026
+#   recursive function                                                  Date: 04-03-2026
 
+# Factorial
+'''
+def fact(n):
+    if n==0:
+        return 1
+    else:
+        return n*fact(n-1)
+print(fact(5))
+'''   
+# sum of n numbers
+'''
+def sum(n):
+    if n==0:
+        return 0
+    else:
+        return n+sum(n-1)
+print(sum(5))
+'''
+# Fibonacci series:
+'''
+def fib(n):
+    if n<=1:
+        return n
+    else:
+        return fib(n-2)+fib(n-1)
+num=int(input())
+for i in range(num):
+    print(fib(i))
+ '''
+# string reverse using recursive:
+'''
+def rev(n):
+    if len(n)<=1:
+        return n
+    else:
+        return rev(n[1:])+n[0]  
+print(rev("python"))
+'''
+# Palindrome Using recursive
+'''
+def palin(n):
+    if len(n)<=1:
+        return n
+    else:
+        return palin(n[1:])+n[0]
+n=input()
+if n==palin(n):
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+'''
+# list number reverse:
+
+def rev(n):
+    if len(n)==0:
+        return []
+    else:
+        return rev(n[1:])+[n[0]]
+print(rev([1,2,3,4]))
+
+n=[0]
+print(n[1:])
 
 
  # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                                        Date: 05-03-2026
+
+
+
+
+
+
+
+
+
+
 
 
 
