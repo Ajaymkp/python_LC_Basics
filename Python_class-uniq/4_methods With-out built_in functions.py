@@ -568,8 +568,8 @@ print(z)
 
  ### Dictionary Comprehension:
 
-a=int(input())
-b={}
+##a=int(input())
+##b={}
 
 # int power of 2
 '''
@@ -596,7 +596,7 @@ d={i:i**2 for i in range(1,a+1) if i%2 == 0  }
 print(b)
 '''
 # 
-
+'''
 for i in range(1,a+1):
     if i%2==0:
         b[i]="even"
@@ -606,7 +606,7 @@ print(b)
 
 e={i:"even" if i%2==0 else "odd" for i in range(1,a+1)}
 print(e)
-
+'''
 
 # ____________________________________________________________________________________________________________________________________________________________________________________________
 #            Saturday -- mock test for python data structures            Date: 28-02-2026
@@ -617,4 +617,38 @@ print(e)
 
 
 # ____________________________________________________________________________________________________________________________________________________________________________________________
+
+
+# Gnerator Comprehension                 Date: 05-03-2026
+
+a=5
+'''
+d=(i for i in range(a))
+
+print(next(d))
+print(next(d))
+print(next(d))
+print(next(d))
+print(next(d))
+print(next(d))     # error -- StopIteration
+
+'''
+# even numbers:
+'''
+b=(i for i in range(1,a+1) if i%2 ==0)
+print(next(b))
+print(next(b))
+'''
+# if and else odd or even:
+
+'''
+c=( f"{i} odd" if i%2==1   else f"{i} even" for i in range(1,a+1) )
+for i in range(a):
+    print(next(c))
+'''
+
+
+
+
+
 

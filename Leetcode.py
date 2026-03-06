@@ -903,8 +903,123 @@ class Solution:
         # Convert the remaining numbers to strings and join them
         return "".join(map(str, result[start:]))
 
-print(Solution().multiply("12","12"))
+#print(Solution().multiply("12","12"))
 
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ # 29 problem --     Pow(x, n)               date: 05-03-2026
+
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        # Step 1: Handle negative exponents
+        if n < 0:
+            x = 1/x
+            n=-n
+        result = 1.0
+        
+        # Step 2: Binary Exponentiation
+        while n > 0:
+            # If the current power is odd, multiply the result by x
+            if n%2 == 1:
+                result *=x
+                
+            # Square x, and cut n in half (integer division)
+            x *= x
+            n//=2
+        return result
+
+##print(Solution().myPow(2.000,10))
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ # 30 problem --                      date: 06-03-2026
+ '''
+from typing import Optional
+
+ # Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+
+        dummy = ListNode()
+        tail = dummy
+
+        while list1 and list2:
+            if list1.val < list2.val:
+                tail.next = list1
+                list1 = list1.next
+            else:
+                tail.next = list2
+                list2 = list2.next
+            tail = tail.next
+
+        if list1:
+            tail.next = list1
+        elif list2:
+            tail.next = list2
+        return dummy.next
+
+#----------------
+
+# --- HELPER FUNCTIONS FOR LOCAL TESTING ---
+
+# Converts a standard Python list like [1, 2, 4] into a Linked List
+def create_linked_list(arr):
+    dummy = ListNode()
+    tail = dummy
+    for val in arr:
+        tail.next = ListNode(val)
+        tail = tail.next
+    return dummy.next
+
+# Converts a Linked List back into a standard Python list so we can print it
+def print_linked_list(head):
+    result = []
+    while head:
+        result.append(head.val)
+        head = head.next
+    print(result)
+    
+l1 = create_linked_list([1, 2, 4])
+l2 = create_linked_list([1, 3, 4])
+
+# 2. Run your solution
+merged_head = Solution().mergeTwoLists(l1, l2)
+
+# 3. Print the result!
+print_linked_list(merged_head)
+ '''           
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ # 31 problem --                     date: 07-03-2026
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ # 32 problem --                     date: 08-03-2026
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ # 33 problem --                   date: 09-03-2026
+
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ # 28 problem --     Multiply Strings like realtime                  date: 10-03-2026
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ # 28 problem --     Multiply Strings like realtime                  date: 11-03-2026
 
 
 
@@ -913,8 +1028,6 @@ print(Solution().multiply("12","12"))
 
 
     
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 
 

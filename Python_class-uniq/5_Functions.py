@@ -409,7 +409,7 @@ else:
     print("Not Palindrome")
 '''
 # list number reverse:
-
+'''
 def rev(n):
     if len(n)==0:
         return []
@@ -417,35 +417,478 @@ def rev(n):
         return rev(n[1:])+[n[0]]
 print(rev([1,2,3,4]))
 
-n=[0]
-print(n[1:])
-
-
- # ____________________________________________________________________________________________________________________________________________________________________________________________
-
-#                                                                        Date: 05-03-2026
-
-
-
-
-
-
-
-
-
-
-
-
+#n=[0]
+#print(n[1:])
+'''
 
  # ____________________________________________________________________________________________________________________________________________________________________________________________
 
-#                                                                        Date: 06-03-2026
+#      lambda function                                                 Date: 05-03-2026
+
+'''
+Its a anonymous function
+Its a one line function
+No need to use def keyword
+'''
+#syntax:
+            ## lambda arguments:expression
+
+## using print
+'''
+def func():
+    print('yo')
+func()
+
+#
+
+func = lambda: print('yo')
+func()
+'''
+## using return
+'''
+def func():
+    return('Yo')
+print(func())
+
+#
+
+func = lambda : 'Yo'
+print(func())
+'''
+## argument passing
+
+## using print
+'''
+def add (a,b):
+    print(a+b)
+add(10,8)
+
+#
+
+add = lambda a,b : print(a+b)
+add(8,10)
+'''
+##using return
+'''
+def add(a,b):
+    return a+b
+print(add(10,5))
+
+#
+
+add = lambda a,b : a+b
+print(add(6,7))
+'''
+# lamda function using if    ----   odd or even
+
+# using print
+'''
+def oddEven(a):
+    if a%2==0:
+        print("even")
+    else:
+        print("odd")
+oddEven(1)
+'''
+#
+
+'''
+n=lambda a : print("even") if a%2==0 else print("odd") 
+n(6)
+'''
+# using return
+'''
+def odd(a):
+    if a%2==0:
+        return even
+    return odd
+print(4)
+'''
+#
+'''
+m=lambda a: 'even' if a%2==0 else 'odd'
+print(m(6))   
+'''
+# sort and reverse:
+'''
+a=[9,4,7,2,6]
+a.sort(reverse=True)
+#a.sort()
+print(a)
+'''
+# sort key = len means which is small count based sorting
+
+'''
+a=['ace','luffy','sabo']
+a.sort(key=len)
+print(a)
+'''
+#  value based acsending order sorting
+'''
+a=[('luffy',3),('sabo',2),('ace',1)]
+a.sort( key = lambda z:z[1])
+print(a)
+'''
+#
+'''
+a=[('luffy',3),('sabo',2),('ace',1)]
+a.sort( key = lambda z:z[1],reverse = True)
+print(a)
+'''
+
+ # sorted -- which is not affecting original 
+''' 
+a=['ace','luffy','sabo']
+b=sorted(a)                       # -- alphabetic order sorted
+print(a)
+print(b)
+'''
+#
+'''
+a=['ace','luffy','sabo']
+b=sorted(a,key=len)  # -- len value based sorted
+print(a,b)
+'''
+#           -- value based
+'''
+a={'luffy':3,'sabo':4,'ace':1}
+b=dict(sorted (a.items(),key=lambda z:z[1]))
+print(a,b)
+'''
+# count words:
+
+a="I learn python"
+'''
+count = 1
+for i in range(len(a)):
+    if a[i] == " ":
+        count+=1
+print(count)
+'''
+# function
+'''
+def bit(a):
+    return len(a.split())
+print(bit(a))
+'''
+# lambda function
+'''
+c= lambda a:len(a.split())
+print(c(a))
+'''
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+## Higher order function
+
+## map
+
+## syntax
+
+##                        map(function,iterables)
+
+##  definition -- Applies a fuction to ll elements of an iterables
+
+a=[1,2,3,4,5]
+b=[]
+
+# normal function:
+
+'''
+def func(x):
+    return x*2
+for i in a:
+    b.append(func(i))
+print(b)
+'''
+# lambda function
+'''
+c= lambda x: x*2
+for i in a:
+    b.append(c(i))
+print(b)
+'''
+# map and lambda
+'''
+b=map(lambda x:x*2,a)   ##    x:x*2 is function and a is iterables 
+print(list(b))
+'''
+
+# def and map()
+'''
+def func(x):
+    return x*2
+b=map (func , a)
+print(list(b))
+'''
+
+# len of str in list of elements:
+
+# def and map
+'''
+a=['ace','luffy','sabo']
+def func(x):
+    return len(x)
+b=map(func,a)
+print(list(b))
+'''
+# map and lambda
+'''
+a=['ace','luffy','sabo']
+b=map(lambda x:len(x),a)
+print(list(b))
+'''
+#---------------------------
+
+# str into int
+'''
+a=['1','4','3','2','5']
+b = map (int,a)
+print(list(b))
+'''
+# filter
+# syntax
+
+#                 filter(function,iterables)
+
+# A function is used to filter the element of an iterable
+
+# def and map
+
+
+'''
+def func(x):
+    return x%2==0
+a=[1,2,3,4,5,6]    
+b=map(func,a)
+print(list(b))
+'''
+# def and filter
+'''
+def func(x):
+    return x%2==0
+a=[1,2,3,4,5,6]    
+b=filter(func,a)
+print(list(b))
+'''
+# filter and lambda
+'''
+a=[1,2,3,4,5,6]
+b=filter(lambda x:x%2==0 , a)
+print(list(b))
+'''
+#-------------------------------------------------
+
+# filter and def
+
+
+'''
+def func(x):
+    return len(x)==4
+b=filter(func,a)
+a=['ace','luffy','sabo','zoro']
+print(list(b))
+'''
+
+# filter and lambda
+'''
+a=['ace','luffy','sabo','zoro']
+b=filter(lambda x:len(x)==4,a)
+print(list(b))
+'''
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#   Higher order function                                                Date: 06-03-2026
 
 
 
+# filter and lambda
+'''
+a=['sabo','zoro','ace','sanji','str','sky','aei']
+c=filter (lambda y:y.endswith('o'),a)
+print(list(c))
+'''
+#filter and lambda
+'''
+a=['sabo','zoro','ace','sanji','str','sky','aei']
+d=filter(lambda x:x.startswith('s'),a)
+print(list(d))
+'''
+
+# filter and lambda and for and if:       any vowels
+'''
+a=['sabo','zoro','ace','sanji','str','sky','aei']
+e=filter(lambda x:any(i in ('a','e','i','o','u') for i in x.lower()),a)
+print(list(e))
+'''
+# filter and lambda and for and if:       all vowels
+'''
+a=['sabo','zoro','ace','sanji','str','sky','aei']
+f=filter(lambda x:all(i in ('a','e','i','o','u') for i in x.lower()),a)
+print(list(f))
+'''
+#________________________
+
+
+#    syntax:          reduce (function,iterable)
+
+## A function is used to reduce a list to a {--single--} value
+
+# add
+'''
+from functools import reduce
+
+a=[1,2,3,4,5]
+b=reduce (lambda x,y:x+y,a)
+print(b)
+'''
+# multiply
+'''
+from functools import reduce
+
+a=[1,2,3,4,5]
+b=reduce (lambda x,y:x*y,a)
+print(b)
+'''
+
+# find the largest number in the list
+'''
+from functools import reduce
+a=[10,20,30,40,50]
+b=reduce(lambda x,y:x if  x>y else y,a)
+print(b)
+'''
+# Smallest Number
+'''
+from functools import reduce
+m=['ace','sabo','luffy']
+c=reduce (lambda x,y:x if x<y else y,a)
+print(c)
+'''
+
+# max len of str
+'''
+from functools import reduce
+m=['ace','sabo','luffy']
+o=reduce(lambda x,y:y if len(x) < len(y) else y,m)
+print(o)
+'''
+# min len of str
+
+'''
+from functools import reduce
+
+a=[[1,2],[3,4],[5,6]]
+n=reduce(lambda x,y:y if len(x)>len(y) else x,m)
+print(n)
+'''
+
+# nested list into list
+'''
+from functools import reduce
+
+a=[[1,2],[3,4],[5,6]]
+b=reduce(lambda x,y:x+y,a  )             # -- here op is single list
+print(b)
+'''
+'''
+from functools  import reduce
+c="i learn python"
+
+d=reduce (lambda x,y:y+" "+x ,c.split())
+print(d)
+'''
+# list + string rev lines not
+'''
+from functools import reduce
+a=['i','learn','python']
+b=reduce (lambda x,y: y + " " + x,a)
+print(b)
+'''
+
+#--------------------------
+
+# closer Function:        ---- function inside function
+
+# 1. print + function2() + function1()
+'''
+def outer():
+    def inner():
+        print("Yo")
+    inner()
+outer()
+'''
+# 2. return + print(function2()) + function1()
+'''
+def outer():
+    def inner():
+        return 'Yowaimo'
+    print(inner())
+outer()
+'''
+# 3. return + return func 2() + print(func 1())
+'''
+def  outer():
+    def inner():
+        return 'Daijobu'
+    return inner()
+print(outer())
+'''
+#4. return + return Function 2 + print(func1()())
+
+def outer():
+    def inner():
+        return 'joy boy'
+    return inner
+print(outer()())
+
+# 5. print + return func 2() + func 1()  or  print + return func 2 + func 1()()
+'''
+def outer():
+    def inner():
+        print('Bankai')
+    return inner()
+outer()
+'''
+# 6.  return + return function 2 + a=function 1() + print(a)
+'''
+def outer():
+    def inner():
+        return 'Gear 5'
+    return inner()
+a=outer()
+print(a)
+'''
+#____________________________________________________
+
+# with argument passing:
+
+# outer function argument:
+'''
+def outer(a):
+    def inner():
+        print(a)
+    inner()
+outer('Sun God')
+'''
+# inner function argument:
+'''
+def outer(a):
+    def inner(b):
+        print(a+b)
+    return inner
+outer(10)(8)
+'''
+# Scope of variables:
+
+##     -- Local scope
+##     -- Global scope
+##     -- Enclosing scope
+##     --  Built-in Function
  # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                                        Date: 07-03-2026
+
 
 
 
