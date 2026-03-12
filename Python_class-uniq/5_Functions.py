@@ -161,7 +161,7 @@ print(range(r))
 
                  ##   min       (minimum num in group of nums):
 
-m=[10,20,30,40,50]
+##m=[10,20,30,40,50]
 
 ##print(min(m))
 
@@ -175,6 +175,8 @@ a=6.5
 b=6.6
 print(round(a),round(b))
 '''
+
+'''
 a=[False,False]
 b=[True,False]
 c=[False,True]
@@ -187,6 +189,7 @@ g=[""]
 h=[" "]
 i=[]
 j=""
+'''
 ## any   -- OR GATE --   (any one True --op will True):
 '''
 print(any(a))
@@ -279,7 +282,7 @@ print(g,h)
     #   1.  shallow copy creates a new outer object
     #  but references the same nested mutable objects.
 
-    # 2. if nested mutable objects mutated . it will affect original.
+    # 2. if nested mutable objects mutated, it will affect original.
   
 import copy
 '''
@@ -327,7 +330,7 @@ print(c,id(c))
 print(d,id(d))      
 '''
 
-## return              ----    (Back to the caller Doesn't read any after funtion code)
+## return              ----    (Back to the caller Doesn't read any funtion code after return)
 
 
 '''
@@ -350,12 +353,11 @@ print(return_2())
 
 
 
-
-
-
  # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #   recursive function                                                  Date: 04-03-2026
+
+# is a function That calls itself  repeatedly until the condition is satisfied.
 
 # Factorial
 '''
@@ -439,7 +441,7 @@ def func():
     print('yo')
 func()
 
-#
+# using lambda
 
 func = lambda: print('yo')
 func()
@@ -557,7 +559,7 @@ print(a,b)
 '''
 # count words:
 
-a="I learn python"
+##a="I learn python"
 '''
 count = 1
 for i in range(len(a)):
@@ -586,10 +588,10 @@ print(c(a))
 
 ##                        map(function,iterables)
 
-##  definition -- Applies a fuction to ll elements of an iterables
+##  definition -- Applies a fuction to the elements of an iterables
 
-a=[1,2,3,4,5]
-b=[]
+##a=[1,2,3,4,5]
+##b=[]
 
 # normal function:
 
@@ -835,13 +837,13 @@ def  outer():
 print(outer())
 '''
 #4. return + return Function 2 + print(func1()())
-
+'''
 def outer():
     def inner():
         return 'joy boy'
     return inner
 print(outer()())
-
+'''
 # 5. print + return func 2() + func 1()  or  print + return func 2 + func 1()()
 '''
 def outer():
@@ -887,26 +889,15 @@ outer(10)(8)
 ##     --  Built-in Function
  # ____________________________________________________________________________________________________________________________________________________________________________________________
 
-#                                                                        Date: 07-03-2026
 
 
 
 
- # ____________________________________________________________________________________________________________________________________________________________________________________________
-
-#                                                                        Date: 08-03-2026
 
 
 
- # ____________________________________________________________________________________________________________________________________________________________________________________________
-
-#                                                                        Date: 09-03-2026
 
 
-
- # ____________________________________________________________________________________________________________________________________________________________________________________________
-
-#                                                                        Date: 10-03-2026
 
 
 

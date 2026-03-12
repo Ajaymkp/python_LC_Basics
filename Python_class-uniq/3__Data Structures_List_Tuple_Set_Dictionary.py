@@ -464,7 +464,7 @@ a={1:'ace',2:'sabo',3:'luffy'}
 a.popitem()
 print(a)
 '''
-# delete  -- del x[] = ''
+# delete  -- del x['']
 '''
 b={'a':'zoro','b':'sanji','c':'luffy'}
 del b['b']
@@ -478,7 +478,7 @@ d=b.setdefault('e','nami')                                # OP:  -- nami
 #print(b,c,d)
 
 #____________________________________________________________________________________________________________________________________________________________________________________________
-            
+ #### With-out built-in functions           
 
 # For loop in List                     ~
 
@@ -499,14 +499,14 @@ s=40
 c=list([])
 #r.remove(50)
 #print(r)
-'''
+''''''
 for i in range(len(r)):
     if s == r[i]:
         continue
     else:
         c.append(r[i])
 print(c)
-'''
+''''''
 # rev
 
 '''

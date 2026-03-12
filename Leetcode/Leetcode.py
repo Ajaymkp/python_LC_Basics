@@ -996,8 +996,16 @@ print_linked_list(merged_head)
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- # 31 problem --                     date: 07-03-2026
-
+ # 31 problem -- Reverse Linked List                    date: 07-03-2026
+ 
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -159,17 +159,16 @@ for i in a:
         c.append(i)
 print(b+c)
 '''
-
+a=[0,1,2,0,3]
 x=0               # --- Another Method
 '''
 for i in range(len(a)):
     if a[i]!=0:
-        a[i],a[x]=a[x],a[i]
-        x+=1
+        a[i],a[x]=a[x]i
 print(a)
 '''
-
-a=[0,2,3,4,6,7,11,9,5]            # --- op:[2,7]  two pointer mens l and r
+# which two numbers addition gives 9
+a=[0,2,3,4,6,7,11,9,5]            # --- op:[2,7]  two pointer means l and r
 a.sort()
 b=9
 '''
@@ -186,6 +185,7 @@ while l<r:
     else:
         r-=1
 '''
+# Intersection
 a=[1,2,3,4]
 b=[3,4,5,6,7]
 c=[]
@@ -196,17 +196,21 @@ for i in a:
             c.append(i)
 print(c)
 '''
+# Alternate method in single loop: time less
 '''
 for i in a:
     if i in b:
         c.append(i)
 print(c)
 '''
+
+#---------------------------------------------------------------------------
+# Set Methods without built-in methods
+
       #  0p: --- {1,2,3,4,5,6} union
 '''             
 a={1,2,3}
 b={4,5,6}
-c={}
 for i in a:
     b.add(i)
 print(b)       
@@ -250,7 +254,14 @@ b={4,5,6}
 print(a.isdisjoint(b))
 print(b.isdisjoint(a))
 '''
-
+'''
+a={1,2,3}
+b={3,4,5,6}
+for i in b:
+    if i in a:
+        a.remove(i)
+print(a)
+'''
 #____________________________________________________________________________________________________________________________________________________________________________________________
 #                                                                                       Date: 26-02-2026
 
