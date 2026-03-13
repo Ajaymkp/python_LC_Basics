@@ -762,33 +762,261 @@ else:
 
 '''
 
-
-
-
-
-
-
-
-
-
-
-
-
  # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                      Date: 13-03-2026
 
 
+''''
+name1 = list(input("Enter Your name: ").lower().replace(" ",""))
+name2 = list(input("Enter Your partner name: ").lower().replace(" ",""))
+
+for i in name1:
+    if i in name2:
+        name1.remove(i)
+        name2.remove(i)
+    count = len(name1)+len(name2)
+    
+flames=['f','l','a','m','e','s']
+while len(flames)>1:
+    index = count%len(flames)-1
+    if index >0:
+        right =flames[index+1:]
+        left = flames[:index]
+        flames = right+left
+    else:
+        flames.pop()
+result = flames[0]
+print(result)
+'''
+
+#______________________________________________
+import re
+
+# To print Only num
+'''
+a="Phone num : 12345 67890"
+b=re.findall("\\d",a)
+c=re.findall("\\d+",a)
+print(b,c)
+'''
+
+# differenciate the alphabets
+
+'''
+a="aizen@gmail.com"
+b=re.findall("[a-zA-Z]+",a)
+print(b)
+'''
+# x.
+'''
+a="bleach"
+b=re.findall("b.",a)
+print(b)
+'''
+# .x
+'''
+a="bleach"
+b=re.findall(".h",a)
+print(b)
+'''
+# x.x
+#empty
+'''
+a="bleach"
+b=re.findall("b.l",a)
+print(b)
+'''
+# bl
+'''
+a="bleach"
+b=re.findall("b.e",a)
+print(b)
+'''
+#x.xx  -- blea
+'''
+a="bleach"
+b=re.findall("b.ea",a)
+print(b)
+'''
+#______________________________________
+
+# +   required 1 or more char if not list will be empty
+'''
+a="bleach"
+b=re.findall("b.+e",a)
+print(b)
+'''
+# empty
+'''
+a="bleach"
+b=re.findall("b.+l",a)
+print(b)
+'''
+# double str words
+'''
+a="bleach bankai"
+b=re.findall("b.+",a)
+print(b)
+'''
+#____________________________________________________-
+# *  required 0 or more char here not
+'''
+a="bleach"
+b=re.findall("b.*l",a)
+print(b)
+'''
+# bleach
+'''
+a="bleach"
+b=re.findall("b.*h",a)
+print(b)
+'''
+# double str words
+'''
+a="bleach bankai"
+b=re.findall("b.*",a)
+print(b)
+'''
+#
+'''
+a="bleach bankai"
+b=re.findall("b.*a",a)
+print(b)
+'''
+#______________________________________
+
+# ? 0 or 1 char required  --  if it is in or not to check
+'''
+a= "bleach bankai"
+b= re.findall("[b.?]",a)
+print(b)
+'''
+#
+'''
+
+'''
+
+# {} -- speecified char
+'''
+a= "bleach bankai"
+b= re.findall("[.{a}]",a)
+print(b)
+'''
+#  -  check rhe chars are in or not
+'''
+a= "bleach bankai"
+b= re.findall(".{3}a",a)
+print(b)
+'''
+
+# | -- like or gate
+'''
+a= "bleach bankai"
+b= re.findall("[bleach|naruto]+",a)
+print(b)
+
+a= "bleach bankai"
+b= re.findall("[bleach|bankai]+",a)
+print(b)
+'''
+# [a-z]
+'''
+a= "bleach bankai"
+b= re.findall("[a-z]+",a)
+print(b)
+'''
+
+# [A-Z]
 
 
- # ____________________________________________________________________________________________________________________________________________________________________________________________
 
-#                                                      Date: 10-03-2026
+# E-mail
+'''
+a= "bleach@gmail.com"
+b= re.findall("[a-z]+@+[a-z].+",a)
+print(b)
+'''
+
+# r"\d" -- raw string no error or \\ will work no error 
+'''
+a= "abc12334445"
+b= re.findall(r"/d+",a)
+print(b)
+
+'''
+#password checking
+'''
+a= input("Enter your password :")
+
+if len(a)>7:
+    if re.findall("[!@#$%^&*,./?]",a) == []:
+        print("Give atleast a one special char")
+    elif re.findall("[A-Z]",a) == []:
+        print("Give atleast a one capital letter ")
+    elif re.findall("[0-9]",a) == []:
+        print("Give atleast a one integer")
+    else:
+        print("valid password")
+else:
+    print("Invalid")
+'''
+
+# using search
+'''
+a= input("Enter your password :")
+
+if len(a)>7:
+    if re.search("[!@#$%^&*,./?]",a) is None:
+        print("Give atleast a one special char")
+    elif re.search("[A-Z]",a) is None:
+        print("Give atleast a one capital letter ")
+    elif re.search("[0-9]",a) is None:
+        print("Give atleast a one integer")
+    else:
+        print("valid password")
+else:
+    print("Invalid")
+'''
+
+# password checking untill correct
+
+'''
+while True:
+    a= input("Enter your password :")
+
+    if len(a)>7:
+        if re.search("[!@#$%^&*,./?]",a) is None:
+            print("Give atleast a one special char")
+        elif re.search("[A-Z]",a) is None:
+            print("Give atleast a one capital letter ")
+        elif re.search("[0-9]",a) is None:
+            print("Give atleast a one integer")
+        else:
+            print("valid password")
+            break
+    else:
+        print("Invalid")
+'''
+
+
+
+
+
+
+
+
+
 
 
  # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                      Date: 14-03-2026
+
+
+ # ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 15-03-2026
 
 
 
