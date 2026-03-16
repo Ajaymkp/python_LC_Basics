@@ -774,39 +774,44 @@ else:
 
                 #3 for loop
 '''
-##for i in range(5):  #end
-##    print(i)
-
+for i in range(5):  #end
+    print(i)
+'''
 ##for i in  range(3,5):  #stadn, ert 
 ##    print(i)
+##    
 ##for i in range(0,10,2):               ## (start,end("but last vlue not print like index"), step)
 ##    print(i)
-##
-##for i in range(10,0,-1): 3 -1        #for reverse print also like index
+    
+
+##for i in range(10,0,-1):         #for reverse print also like index
 ##    print(i)
 
+# even number
+'''
 n=int(input("Enter n: "))
 for i in range(0,n,2):
     print(i)
 '''
 
  #string
-'''
-for i in "sanji":
-    print(i)
 
-a="luffy"
-for j in a:
-    print(j)
+##for i in "sanji":
+##    print(i)
 
-str = input("Enter aa string: ")
-for k in str:
-    print(k)
-'''
+##
+##a="luffy"
+##for j in a:
+##    print(j)
+
+##st = input("Enter aa string: ")
+##for k in st:
+##    print(k)
+
 
 ##z="python"
 ##rev = z[::-1]
-
+##
 ##for l in rev:
 ##    print(l)
 
@@ -819,7 +824,7 @@ for i in range(len(a)-1,-1,-1):  # here do hte reverse
  #     another method
 '''
 a="python"
-for i in range (1,(len(a)+1),1         0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ):
+for i in range (1,(len(a)+1),1):                                            
     print(a[-i])           # here do the reverse        
 '''
 
@@ -830,12 +835,12 @@ for i in range (1,(len(a)+1),1         0                                        
 ##    print(i, "*", t,"=",i*t)
 
         # print even numbers only
-    
-##e=(int(input("Enter a num: ")))
-##for i in range(e):
-##    if i%2 == 0:     # if i%2==1 , it will print odd nums only
-##        print(i)
-
+'''    
+e=(int(input("Enter a num: ")))
+for i in range(e):
+    if i%2 == 0:     # if i%2==1 , it will print odd nums only
+        print(i)
+'''
 
        #sum of numbers:                             
                                     #if n=5 op == 15     0+0 = 0   #back process
@@ -844,12 +849,13 @@ for i in range (1,(len(a)+1),1         0                                        
                                                                        # 3+3= 6
                                                                              #6+4= 10
                                                                                  # 10+5=15
-##n=int(input("enter  num: "))              
-##count=0
-##for i in range(1,n+1):
-##    count = count+i
-##    print(count)
-##
+'''
+n=int(input("enter  num: "))              
+count=0
+for i in range(1,n+1):
+    count = count+i
+print(count)
+'''
                                                                                  
     
          # counting vowels
@@ -862,7 +868,7 @@ for i in a:
     if i in "aeiou":
         count= count+1       # count+=1
 print(count)
-'''  
+''' 
 
 
 
@@ -879,8 +885,8 @@ f=int(input("Enter a num: "))
 fac = 1
 for i in range(f,0,-1):
     fac=i*fac
-print("Factorial of", f, ":", fac) 
-'''   
+print("Factorial of",f, ":", fac) 
+'''
     
 #2. perfect number {ex: 6,8,28,128,426
              #1 + 2 + 3 = 6. and 1,2,3 are divisior of 6           # so 6 is perfect number
@@ -895,8 +901,8 @@ for i in range(1,p):
 if count == p:
         print("perfect number")
 else:
-        print("Not")
-'''        
+        print("Not perfect number")
+'''      
 
  #3. Armstrong Number:
 '''
@@ -934,14 +940,15 @@ print("sum of digits: ",count)
                                    #F_n = F_{n-1} + F_{n-2}
 
 '''
-The Fibonacci series is a sequence of numbers where each number is the sum of the two preceding ones. It usually starts with 0 and 1.
+The Fibonacci series is a sequence of numbers where each number
+is the sum of the two preceding ones. It usually starts with 0 and 1.
 
 1. The Sequence
 The series progresses like this: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...    
 '''
                                                # a,b = b, a+b
                                                      
-'''                                                      
+'''                                                    
 f=int(input("Enter a num: "))
 a=0
 b=1
@@ -967,7 +974,8 @@ print(a)
  Step 1: 192 \times 2 = 384
  Step 2: 192 \times 3 = 576
  Step 3: Concatenate them: 192384576
- Result: This sequence contains 1, 2, 3, 4, 5, 6, 7, 8, and 9 exactly once. Therefore, 192 is a fascinating number.
+ Result: This sequence contains 1, 2, 3, 4, 5, 6, 7, 8, and 9 exactly once.
+ Therefore, 192 is a fascinating number.
 '''  # completed
 
 
