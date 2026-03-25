@@ -180,6 +180,10 @@ print(y)
 
 ##print(0.1+0.2==0.3)
 
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 17-03-2026
 # op -- [3,4,5,1,2]  -- change upto input  index 
 '''
 x=[1,2,3,4,5]
@@ -187,7 +191,7 @@ y=2
 z=x[y:]+x[:y]
 print(z)
 '''
-# change upto iput index to last
+# change upto input index to last
 '''
 a=[1,2,3,4,5]
 b=int(input())
@@ -282,14 +286,15 @@ for i in x.values():
         y=i
 print(y)
 '''
-# ____________________________________________________________________________________________________________________________________________________________________________________________
 
-#                                                      Date: 17-03-2026
 
+### ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 18-03-2026
 #longest substring without duplicate values
 '''
-x="bankaitensazangatsu"
-##x="abadbc"
+##x="bankaitensazangatsu"
+x="abadbc"
 s=set()
 l=0
 length=0
@@ -299,14 +304,14 @@ for r in range(len(x)):
         s.remove(x[l])
         l+=1
     s.add(x[r])
-##    if length>r-l+1:
-##        length = length
-##    else:
-##        length = r-l+1
     length=max(length,r-l+1)
 print(length)
-'''            
-    
+'''          
+
+ ##    if length>r-l+1:
+##        length = length
+##    else:
+##        length = r-l+1   
 # op -- ["cba","fed"] -- reverse string inside list
 '''
 x=["abc","def"]
@@ -394,9 +399,10 @@ for i in range(1,len(x)):
         z=[x[i]]
 y.append(z)
 print(y)
-'''    
+'''
 # op -- [[1,1,1],[4,4],[2,2],[7],[6],[5]]
 
+'''
 x=[1,1,1,2,2,4,4,5,6,7,8]
 y=[]
 z=[x[0]]
@@ -410,10 +416,17 @@ for i in range(1,len(x)):
 y.append(z)
 print(y)
 
-    
-##a=x[0]
+for i in range(len(y)):
+    for j in range(i+1,len(y)):
+        if len(y[i])<=len(y[j]) and y[i][0]<=y[j][0]:
+            y[i],y[j]=y[j],y[i]
+print(y)
+'''        
+# Another method
+'''
 a=sorted(y,key=lambda b:(len(b),b[0]) ,reverse=True)
 print(a)
+'''
 
 ##b=[y[0]]
 ####b.insert(0,y[2])
@@ -429,43 +442,291 @@ print(a)
 ##print(b)
 
 
-### ____________________________________________________________________________________________________________________________________________________________________________________________
-
-#                                                      Date: 18-03-2026
-
-
-
-
-
-
-
-
-
 
 # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                      Date: 19-03-2026
+d=[{"name":"urahara","age":23},{"name":"ichigo","age":24},{"name":"aizen","age":22}]
+'''
+# reverse sort by age
+
+e=sorted(d,key=lambda x:x["age"],reverse=True)
+print(e)
+
+# sort by age 
+
+f=sorted(d,key=lambda x:x["age"])
+print(f)
+'''
+
+# 2 palindrome so true 
+
+##op = True
+##a="ababa"
+##op = False
+
+
+'''
+a="noonmadam"
+def palin(a):
+    for i in range(1,len(a)):
+        l=a[:i]
+        r=a[i:]
+        if l==l[::-1] and r==r[::-1]:
+            return True
+    return False
+print(palin(a))
+'''
 
 
 
+# Another Method
+
+'''
+##a="noonmadam"
+a="evevenoon"              ## ---   it is wrong
+b=a[0]
+c=""
+d=""
+e=""
 
 
+for i in range(1,len(a)):
+    if a[i] ==  a[0]:
+        b+=a[i]
+        break
+    else:
+        b+=a[i]
+print(b)
 
+for j in range(len(b),len(a)):
+    c+=a[j]
+print(c)
 
+for i in b:
+    e=i+e
+print(e)
 
+for j in c:
+    d=j+d
+print(d)
 
+if b == e and c == d:
+    print("True")
+else:
+    print("false")
+'''
 
-
-
+# op -- [1,2,3,4,5,6]
+'''
+x=[[1,3,5],[2,4,6]]
+y=[]
+for i in range(len(x[0])):
+    y.append(x[0][i])
+    y.append(x[1][i])
+print(y)
+'''
 
 # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                      Date: 20-03-2026
 
+# op -- 2,12,20,21,22,2 - total how many numbers have 2 , 1 upto 100
 
+'''
+n=int(input("n : "))
+for i in range(1,n+1):
+    if "2" in str(i):
+        print(i)
+'''        
+# Move zeros to last op -- [1,2,3,4,0,0]
+'''
+a=[1,0,2,0,3,4]
+b=[]
+c=[]
+for i in a:
+    if i != 0:
+        b.append(i)
+    else:
+        c.append(i)
+b=b+c
+print(b)
+'''
+# Another method
+'''
+a=[1,0,2,0,3,4]
+b=[]
+c=a.count(0)
+for i in a:
+    if i != 0:
+        b.append(i)
+b.extend([0]*c)
+print(b)
+'''
 
+# Highest value to print -- op 45
+'''
+a={"a":12,"b":45,"c":23}
+b=list(a.values())
+m=b[0]
+for i in b:
+    if i > m:
+        m=i
+print(m)
+'''
+# Another Method
+'''
+a={"a":12,"b":45,"c":23}
+m=max(a,key=a.get)
+print(m)
+'''
+# longest common prefix"
+'''
+a=["flower","flow","flight"]
+p=a[0]
+for i in a[1:]:
+    while not i.startswith(p):
+        p=p[:-1]
+print(p)
+'''
 
+# ouput valid if all are closed , if not Invalid 
+'''
+a=["(","[","]",")","("]
 
+if "(" in a and ")" not in a :
+    print("False")
+elif "[" in   a and  "]" not in a:
+    print("False")
+elif "{" in  a and "}" not in a:
+    print("False")
+else:
+    print("True")
+'''
 # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                      Date: 21-03-2026
+
+# Saturday -- Holiday -- Ramadhan
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 22-03-2026
+
+# Sunday -- Holiday
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 23-03-2026
+
+# Mukil Sir -- absent -- Assesment
+
+# 1. arr=[2,1,8,7,6,3,10,9]   -- tar = 10  -- Two and Three sum
+
+a=[2,1,8,7,6,3,10,9]
+a.sort()
+b=[]
+c=[]
+
+target=10
+l=0
+r=len(a)-1
+
+while l<r:
+    s=a[l]+a[r]
+    if s==target:
+        b.append((a[l],a[r]))
+        c.append((l,r))
+        l+=1
+    elif s>target:
+        r-=1
+    else:
+        l+=1
+print(a)
+print(b)
+print(c)
+  
+# Three sum
+'''
+a=[1,4,5,8,7,2]
+a.sort()
+b=[]
+c=[]
+
+t=10
+l=0
+r=len(a)-1
+m=1
+while l<r:
+    s=a[l]+a[m]+a[r]
+    if s==t:
+        b.append((a[l],a[m],a[r]))
+        c.append((l,m,r))
+        l+=1
+        m+=1
+    elif s>t:
+        r-=1
+    else:
+        l+=1
+        m+=1
+print(a)
+print(b)
+print(c)
+'''
+# 2. second Largest
+
+'''
+a=[10,20,30,45]
+b=a[0]
+c=a[1]
+
+for i in a:
+    if i > b:
+        b=i
+for i in a:
+    if i > c and i != b:
+        c=i
+print(b," is the Largest Num")
+print(c," is the Second Largest Num")
+'''
+
+# 3. count char in a string
+'''
+a="Bankai getsuha tenso".lower().replace(" ","")
+b={}
+for i in a:
+    b [i] = a.count(i)
+print(b)
+'''
+
+#4. Longest substring
+'''
+a="abacacabd"
+b=0
+c=0
+d=set() 
+for i in range(len(a)):
+    while a[i] in d:
+        d.remove(a[b])
+        b+=1
+    d.add(a[i])
+    c=max(c,i-b+1)
+print(c)
+'''
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 24-03-2026
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 25-03-2026
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 25-03-2026
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 26-03-2026
+
+
