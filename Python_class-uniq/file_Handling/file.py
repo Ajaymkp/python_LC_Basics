@@ -1,3 +1,5 @@
+#                                          Date : 24-03-2026  
+
 # to read by s single line
 '''
 file=open("aizen.txt", "r")
@@ -19,6 +21,11 @@ a=file.readlines(2)
 print(a)
 file.close()
 '''
+
+#_____________________________________________________________________________________________________________________________________________________________--
+
+#                                          Date : 25-03-2026
+
 #  shpwing us True or False by able to read or not
 '''
 file=open("aizen.txt","r")
@@ -214,9 +221,61 @@ with open("aizen.txt", "a+") as f:
 
 # to append and read
 # here seek is important to read the content in the file because if we not use seek then it will print nothing because the pointer is at the end of the file
-
+'''
 with open("aizen.txt", "a+") as f:
     print(f.tell())
     f.seek(0)
     print(f.read())
     f.write("\nzangetsu")
+'''
+
+#_____________________________________________________________________________________________________________________________________________________________--
+
+#                                          Date : 26-03-2026
+
+# img -- rb
+'''
+file=open("luf.jpg","rb")
+a=file.read()
+print(a)
+file.close()
+'''
+# img copy
+'''
+f1=open("luf.jpg","rb")
+f2=open("luf_copy.jpg","wb")
+for i in f1:
+    f2.write(i) 
+f1.close()
+f2.close()
+'''
+# pickle dump -- to write in file by pickle
+'''
+import pickle
+file=open("aizen.txt","wb") 
+a={"name":"ichigo","age":15,"hobby":"fighting"}
+x=pickle.dump(a,file)
+file.close()
+'''
+
+# to write in file by pickle
+'''
+import pickle
+file=open("aizen.txt","wb")
+a="name"
+print(a)
+file.close()
+'''
+
+# pickle.load -- to read the file by pickle
+'''
+import pickle
+file=open("aizen.txt","rb")
+x=pickle.load(file)
+print(x)
+file.close()    
+'''
+
+#________________________________________________________________________________________________________________-
+
+

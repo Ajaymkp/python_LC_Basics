@@ -622,7 +622,7 @@ else:
 # Mukil Sir -- absent -- Assesment
 
 # 1. arr=[2,1,8,7,6,3,10,9]   -- tar = 10  -- Two and Three sum
-
+'''
 a=[2,1,8,7,6,3,10,9]
 a.sort()
 b=[]
@@ -645,7 +645,7 @@ while l<r:
 print(a)
 print(b)
 print(c)
-  
+''' 
 # Three sum
 '''
 a=[1,4,5,8,7,2]
@@ -716,17 +716,109 @@ print(c)
 # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                      Date: 24-03-2026
-
+# -- file handling --
 # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                      Date: 25-03-2026
-
+# -- file hndling --
 # ____________________________________________________________________________________________________________________________________________________________________________________________
 
-#                                                      Date: 25-03-2026
+#                                                      Date: 26-03-2026
+# -- half time -- file handling
 
 # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                      Date: 26-03-2026
 
+# OOPS 
 
+# class is a blueprint of object and 
+## logical entity
+### class can create multiple objects
+
+# Objects
+
+# object is an instance of class
+## physical entity
+
+#
+# self refer to the current object
+'''
+class Aizen:
+    def detail(self):
+        print("Yokoso")
+        print(id(self))
+x=Aizen()                         # here x is an object and it has same id as self
+x.detail()
+print(id(x))
+
+y=Aizen()
+y.detai()
+print(id(y))
+'''
+
+# not working
+'''
+class A:
+    def func(self,name):
+        return name
+x=A()
+print(x.func())
+print(A()__dict__)
+'''
+#
+'''
+class A:
+    def func(self,name):
+        return name
+x=A()
+print(x.func("Aizen"))
+'''
+# 
+'''
+class A:
+    def func(self,name):
+        self.name=name
+    def display(self):
+        print(self.name)
+x=A()
+x.func("Gin")
+x.display()         # it is the one call function to print Gin
+print(x.__dict__)
+'''
+
+# init -- to create a constructor.
+## init method is a special method in python which is used to
+## --initialize the object of the class.
+'''
+class A:
+    def __init__(self,name):
+        print(name)
+A("Gin")
+#x=A("Ichimaru")
+'''
+
+#  if __init__ there we don't need to call the function to the rective def
+'''
+class A:
+    def __init__(self,name):
+        self.name=name
+    def display(self):
+        print(self.name)
+x=A("Ruken")
+x.display()         # it is the one call function to print Gin
+print(x.__dict__)
+'''
+
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 27-03-2026
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 28-03-2026
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 29-03-2026
