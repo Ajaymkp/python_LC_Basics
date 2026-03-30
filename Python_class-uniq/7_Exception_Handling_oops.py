@@ -127,7 +127,7 @@ for i,j in x.items():
     y.append((i,j))
 print(y)
 
-z=sorted (y, key=lambda x:x[1], reverse=True)
+z=sorted (y, key=lambda x:x, reverse=True)
 print(z)
 
 res =""
@@ -161,7 +161,7 @@ print(d[1][0])
 #  op == [24,12,8,6]
 
 # all multiple
-# and divide by input by increacing 1
+# and divide by input by increacing 1 index
 '''
 x=[1,2,3,4]
 m=1
@@ -191,42 +191,31 @@ y=2
 z=x[y:]+x[:y]
 print(z)
 '''
-# change upto input index to last
+# Alternate change upto input index to last
 '''
 a=[1,2,3,4,5]
 b=int(input())
 
-for i in range(k):
+for i in range(b):
     x=a.pop(0)
     a.append(x)
 print(a)
 '''
-# change input only to last 
+# Alternate
 
 '''
 a=[1,2,3,4,5]
 b=int(input())
-j=a[0]
-for i in range(len(a)):
-    if a[i] == b:
-        a.remove(b)
-        a.append(b)
-        break
-print(a)
+for i in range(len(a)-1):
+    if i <= a.index(b+1):
+        x=a.pop(0)
+        a.append(x)
+        print(a)
 '''
 
-##      non repeating string 
+##      non repeating string to print here -- b
         
 
-'''
-x="aabccc"
-y=list(x)
-for i in y:
-    z=y[len(y):i:-1]
-    if  i in z:
-        y=pop(i)
-print(y)
-'''
 # Another Method
 '''
 x="aabccc"
@@ -236,16 +225,13 @@ def func(a):
             return i
 print(func(x))
 '''
-# Another Method
+# Another Method it s not fully complete
 
 '''
-a="aabbccc"
+a="aabcc"
 for i in a:
-    if a.count(i)!=1:
-         print(None)
-         break
-    else:
-        print(i)
+    if a.count(i)==1:
+         print(i)
 '''
 #  Missing Sequence Numbers -- op -- [4,6]
 
@@ -311,7 +297,8 @@ print(length)
  ##    if length>r-l+1:
 ##        length = length
 ##    else:
-##        length = r-l+1   
+##        length = r-l+1
+
 # op -- ["cba","fed"] -- reverse string inside list
 '''
 x=["abc","def"]
@@ -387,7 +374,9 @@ print(b)
 
 # op -- [[1,1,1],[2,2],[3,3,3],[4,4]]
 '''
-x=[1,1,1,2,2,3,3,3,4,4]
+x=[1,1,2,4,2,3,1,3,3,4,4]
+x.sort()
+print(x)
 y=[]
 z=[x[0]]
 for i in range(1,len(x)):
@@ -427,19 +416,6 @@ print(y)
 a=sorted(y,key=lambda b:(len(b),b[0]) ,reverse=True)
 print(a)
 '''
-
-##b=[y[0]]
-####b.insert(0,y[2])
-##
-##for i in range(1,len(y)):
-##    
-##    if len(y[i]) > len(b[i-1]):
-##        b.insert(i,y[i])
-##    elif len(y[i])==len(b[i-1]):
-##        b.insert(i-1,y[i])
-##    else:
-##        b.append(y[i])
-##print(b)
 
 
 
@@ -787,7 +763,9 @@ x.display()         # it is the one call function to print Gin
 print(x.__dict__)
 '''
 
-# init -- to create a constructor.
+# constructor
+
+# __init__ -- to create a constructor.
 ## init method is a special method in python which is used to
 ## --initialize the object of the class.
 '''
@@ -798,7 +776,7 @@ A("Gin")
 #x=A("Ichimaru")
 '''
 
-#  if __init__ there we don't need to call the function to the rective def
+#  if __init__ there we don't need to call the function to the read def
 '''
 class A:
     def __init__(self,name):
@@ -806,7 +784,7 @@ class A:
     def display(self):
         print(self.name)
 x=A("Ruken")
-x.display()         # it is the one call function to print Gin
+x.display()         # it is the one call function to print Ruken
 print(x.__dict__)
 '''
 
@@ -815,9 +793,483 @@ print(x.__dict__)
 
 #                                                      Date: 27-03-2026
 
+#  eg for next one
+'''
+class A:
+    def func(self,a,b):
+        print(a+b)
+x=A()
+x.func(10,20)
+'''
+# calling outside def variable -- (self.z)
+'''
+class A:
+    z=30
+    def func(self,a,b):
+        print(a+b+self.z)
+x=A()
+x.func(10,20)
+'''
+# calling func arguments in another display function
+'''
+class A:
+    def func(self,a,b):
+        self.a=a
+        self.b=b
+    def display(self):
+        print(self.a+self.b)
+x=A()
+x.func(10,20)
+x.display()
+'''
+
+# same but using init method
+'''
+class A:
+    def __init__(self,a,b):
+        self.a=a
+        self.b=b
+    def display(self):
+        print(self.a*self.b)
+x=A(10,20)
+x.display()
+'''
+# without argument in init but also same
+
+'''
+class A:
+    def __init__(self):
+        self.a=10
+        self.b=20
+    def display(self):
+        print(self.a*self.b)
+x=A()
+x.display()
+'''
+
+# destructor
+# init is create and del is delete the object
+'''
+class A:
+    def __init__(self):
+        print("created")
+    def __del__(self):
+        print("deleted")
+x=A()
+del x
+'''
+# same but inverse the place
+
+'''
+class A:
+    def __del__(self):
+        print("deleted")
+    def __init__(self):
+        print("created")
+x=A()
+del x        
+'''
+#___________________________________________________________________________________________________________________
+
+# Inheritance
+
+# Single inheritance:
+# class is derived from single parent class
+
+'''
+class dad:
+    def cash(self):
+        print("dad's cash")
+class son(dad):
+    def bike(self):
+        print("son's bike")
+d=dad()
+d.cash()
+
+s=son()
+s.bike()
+s.cash()
+'''
+
+# Multiple inheritance:
+
+# class is derived from two or more parent class
+'''
+class dad:
+    def cash(self):
+        print("dad's cash")
+class mom:
+    def phone(self):
+        print("mom's phone")
+class son(dad,mom):
+    def bike(self):
+        print("son's bike")
+        
+d=dad()
+d.cash()
+
+m=mom()
+m.phone()
+
+s=son()
+s.bike()
+s.cash()
+s.phone()
+'''
+
+# Multilevel inheritance:
+
+# a class is derived from a child class which is derived from a parent class
+'''
+class grand:
+    def land(self):
+        print("grandpa's land")
+class dad(grand):
+    def cash(self):
+        print("dad's cash")
+
+class son(dad):
+    def bike(self):
+        print("son's bike")
+        
+g=grand()
+g.land()
+
+d=dad()
+d.cash()
+d.land()
+
+s=son()
+s.bike()
+s.cash()
+s.land()
+'''
+# hierarchical inheritance:
+
+# two or more class is derived from a single parent class
+'''
+class dad:
+    def cash(self):
+        print("dad's cash")
+class son(dad):
+    def bike(self):
+        print("son's bike")
+class daughter(dad):
+    def gold(self):
+        print("daughter's ")
+
+d=dad()
+d.cash()
+
+s=son()
+s.bike()
+s.cash()
+
+d=daughter()
+d.gold()
+d.cash()
+'''
+
+# hybrid inheritance
+
+# using two or more inheritance 
+
+'''
+class dad:
+    def cash(self):
+        print("dad's cash")
+class mom:
+    def  phone(self):
+        print("mom's phone")
+class daughter(dad,mom):
+    def gold(self):
+        print("daughter's gold")
+class sonInLaw(daughter):
+    def house(self):
+        print("sonInlaw's house")
+
+d=dad()
+d.cash()
+
+m=mom()
+m.phone()
+
+d=daughter()
+d.gold()
+d.cash()
+d.phone()
+
+s=sonInLaw()
+s.house()
+s.gold()
+s.cash()
+s.phone()
+'''
+
+
+
 # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                      Date: 28-03-2026
+
+# saturday -- assessment and mock
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 29-03-2026
+#  sunday -- Holiday
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 29-03-2026
+
+# mro -- Method Resolution order
+
+## c3 linearization
+
+# mro of F = FDBECAO
+'''
+class A:
+    def __init__(self):
+        print("A")
+class B(A):
+    def __init__(self):
+        print("B")       
+class C(A):
+    def __init__(self):
+        print("C")
+class D(B):
+    def __init__(self):
+        print("D")
+class E(C):
+    def __init__(self):
+        print("E")
+class F(D,E):
+    def __init__(self):
+        print("E")
+
+f=F()
+print(F.__mro__)
+'''
+# mro of F = FDEBCAO
+ 
+'''
+class A:
+    def __init__(self):
+        print("A")
+class B(A):
+    def __init__(self):
+        print("B")       
+class C(A):
+    def __init__(self):
+        print("C")
+class D(B,c):
+    def __init__(self):
+        print("D")
+class E(B,C):
+    def __init__(self):
+        print("E")
+class F(D,E):
+    def __init__(self):
+        print("E")
+
+f=F()
+print(F.__mro__)
+'''
+
+# mro of F == FDBAECO
+'''
+class A:
+    def __init__(self):
+        print("A")
+class B:
+    def __init__(self):
+        print("B")       
+class C:
+    def __init__(self):
+        print("C")
+class D(B):
+    def __init__(self):
+        print("D")
+class E(C):
+    def __init__(self):
+        print("E")
+class F(D,A,E):
+    def __init__(self):
+        print("E")
+
+f=F()
+print(F.__mro__)
+'''
+
+# super().  mthod single
+'''
+class Dad():
+    def cash(self):
+        print("Dad's cash")
+class Son(Dad):
+    def cash(self):
+        super().cash()
+        print("Son's cash")
+d=Dad()
+d.cash()
+s=Son()
+s.cash()
+'''
+# same but reverse order for calling
+
+'''
+class Dad():
+    def cash(self):
+        print("Dad's cash")
+class Son(Dad):
+    def cash(self):
+        print("Son's cash")
+        super().cash()
+d=Dad()
+d.cash()
+s=Son()
+s.cash()
+'''
+
+# multiple 
+'''
+class Dad():
+    def cash(self):
+        print("Dad's cash")
+        
+class Mom():
+    def cash(self):
+        print("Mom's cash")
+        super().cash()
+class Son(Mom,Dad):
+    def cash(self):
+        print("Son's cash")
+        super().cash()
+        
+s=Son()
+s.cash()
+'''
+# multiple 
+'''
+class Dad():
+    def cash(self):
+        print("Dad's cash")
+    
+class Mom():
+    def cash(self):
+        print("Mom's cash")
+        
+class Son(Mom,Dad):
+    def cash(self):
+        print("Son's cash")
+        super().cash()
+        Dad().cash()
+s=Son()
+s.cash()
+'''
+
+#  multilevel 
+'''
+class Grand():
+    def cash(self):
+        print("Grandpa's cash")
+
+class Dad(Grand):
+    def cash(self):
+        print("Dad's cash")
+        super().cash()
+
+class Son(Dad):
+    def cash(self):
+        print("Sons's cash")
+        super().cash()
+
+s=Son()
+s.cash()
+'''
+
+# hierrchical
+'''
+class Dad():
+    def cash(self):
+        print("Dad's cash")
+
+class Son(Dad):
+    def cash(self):
+        print("Sons's cash")
+        super().cash()
+
+class Daughter(Dad):
+    def cash(self):
+        print("daughter's cash")
+        super().cash()
+s=Son()
+s.cash()
+
+d=Daughter()
+d.cash()
+'''
+
+# Hybrid
+'''
+class A:
+    def __init__(self):
+        print("A")
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print("B")       
+class C(A):
+    def __init__(self):
+        print("C")
+class D(B):
+    def __init__(self):
+        super().__init__()
+        print("D")
+class E(C):
+    def __init__(self):
+        print("E")
+class F(D,E):
+    def __init__(self):
+        super().__init__()
+        print("F")
+f=F()
+'''
+# op -- ABCDEF
+'''
+class A:
+    def __init__(self):
+        print("A")
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print("B")       
+class C(B):
+    def __init__(self):
+        super().__init__()
+        print("C")
+class D(B):
+    def __init__(self):
+        super().__init__()
+        print("D")
+class E(D):
+    def __init__(self):
+        super().__init__()
+        print("E")
+class F(E,C):
+    def __init__(self):
+        super().__init__()
+        print("F")
+f=F()
+'''
+
+
+
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                      Date: 29-03-2026
 
 # ____________________________________________________________________________________________________________________________________________________________________________________________
 

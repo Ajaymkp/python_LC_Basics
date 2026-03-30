@@ -279,3 +279,21 @@ file.close()
 #________________________________________________________________________________________________________________-
 
 
+#  file handling                               Date:27-03-2026
+
+
+# remove file
+'''
+import os
+os.remove("text.txt")
+'''
+
+# checking file is exist or not
+'''
+import os
+if os.path.exists("bleach.txt"):
+    print("yes")
+else:
+    print("No")
+'''
+#
