@@ -2,6 +2,7 @@
 
 # REV -- Another method
 '''
+r=["l","u","f","f","y"]
 for i in range(len(r)):
     for j in range(i,len(r)):
         r[i], r[j] = r[j], r[i]
@@ -659,7 +660,18 @@ for i in range(a):
 '''
 
 
+a=[40,20,30,40,50]
+lar = a[0]
+secl = a[1]
 
-
+for i in range(len(a)):
+    if a[i]>lar:
+        secl=lar
+        lar=a[i]
+    elif secl < a[i] and lar!=a[i]:
+        secl=a[i]
+print(lar,secl)
+        
+        
 
 
