@@ -93,8 +93,8 @@ else:
 finally:
     print("See you")
 '''
-
-#
+#____________________________________________
+# interview questions
 '''
 num = [1,2,3,6,7,8]
 a=9

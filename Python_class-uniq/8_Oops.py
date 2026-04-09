@@ -1,7 +1,9 @@
-
+j
 #                                                      Date: 26-03-2026
 
 # OOPS 
+
+# class
 
 # class is a blueprint of object and 
 ## logical entity
@@ -143,7 +145,7 @@ x.display()
 '''
 
 # destructor
-# init is create and del is delete the object
+# init is create the object and del is used to delete the object
 '''
 class A:
     def __init__(self):
@@ -214,7 +216,7 @@ s.phone()
 
 # Multilevel inheritance:
 
-# a class is derived from a child class which is derived from a parent class
+# a class is derived from a derived class which is also derived from a parent class
 '''
 class grand:
     def land(self):
@@ -397,7 +399,9 @@ f=F()
 print(F.__mro__)
 '''
 
-# super().  mthod single
+# super().  method in single
+
+# used for calling parent class method with same method name inside of a child class
 '''
 class Dad():
     def cash(self):
@@ -427,7 +431,7 @@ s=Son()
 s.cash()
 '''
 
-# multiple 
+# multiple inheritance of super()
 '''
 class Dad():
     def cash(self):
@@ -622,8 +626,11 @@ c=C()
 # poly -- many
 ## morphism -- forms
 
+# where one entitity(method, operator, object) can take many forms,
+#-allowing different types to be treated through a common superclass.
 # +
 
+# eg + can add and as well as concat
 '''
 a=20
 b=10
@@ -638,9 +645,9 @@ print(a+b)
 
 #Method OverLoading -- compile time polymorphism
 
-# same class and same method name burt different paarameters.
+# same class and same method name but different parameters.
 
-## python doesn't support do importing multiple dispatch -- @dispatch
+## python doesn't support this  so we can achieve through importing multiple dispatch -- @dispatch
 
 #__________________________________________________________
 
@@ -681,11 +688,13 @@ a.func(10,20,30)
 
 #                                                     Date: 02-04-2026
 
-# method overloading in another file in vs code
+# method overloading and overriding also in another file in vs code
 
 
 
-# Encpsulation
+# Encpsulation:
+# Access Modifiers : public -- private __   -- protect _
+
 
 ## public
 '''
@@ -696,7 +705,7 @@ class A:
 a=A()
 a.func(10)
 '''
-# we can ccess in another class is public
+# we can access entity in another class 
 '''
 class A:
     def __init__(self,x):
@@ -728,9 +737,10 @@ b=B()
 b.display()
 '''
 
-# private can access only its own class not other class__ double underscore is the private declaration
+# private can access only its own class not other class
+#__ double underscore is the private declaration
 
-##but can access in other class using calling the class name  --  name manging method
+##but can access in other class calling the class name  --  name manging method
 
 #
 '''
@@ -803,6 +813,8 @@ b.func()
 
 # protected: using --  _ single uderscore  -- naming conversion
 
+# 
+
 # argument
 '''
 class A:
@@ -862,20 +874,603 @@ b.display()
 
 #                                                     Date: 03-04-2026
 
+# eg (summa)
+'''
+class A:
+    def setname(self,a):
+        self.a=a
+    def getname(self):
+        print(self.a)
+a=A()
+a.setname("Zaraki")
+a.getname()
+'''
+
+# Encapsulation
+# which is used for protect the objets from outside changes 
+# @property - but using this we can change
+'''
+class A:
+    def __init__(self):
+        self.__name="xxxxx"
+    @property
+    def name(self):
+        return self.__name
+    @name.setter
+    def name(self,name):
+        self.__name=name
+        
+a=A()
+print(a.name)
+a.name="Kenpachi"
+print(a.name)
+'''
+# with another class:
+'''
+class A:
+    def __init__(self):
+        self.__name="xxxxx"
+    @property
+    def name(self):
+        return self.__name
+    @name.setter
+    def name(self,name):
+        self.__name=name
+class B(A):
+    def namee(self):
+        print(self.name)
+        
+##a=A()
+##print(a.name)
+##a.name="Kenpachi"
+##print(a.name)
+b=B()
+b.namee()
+b.name="Aizen"
+b.namee()
+'''
+#____________________________________-
+# Abstraction:
+
+# hiding the implementation part and showing the fuctionality to the user .
+## by using abstaract class and interfaace we can achieve abstraction.
+### by using interface we can achieve 100 % abstraction
+#---  wheras using abstract class we can achive 0-100%
+
+# all methods in abstract classes are abstract method
+#- if and only if interface method
+
+# else mixing of method and abstract method == abstract class
+
+# interface
+'''
+from abc import ABC, abstractmethod
+
+class A(ABC):
+    @abstractmethod     # interface
+    def hall(self):
+        pass
+    @abstractmethod   # if and only if it has
+    def bedrm(self):
+        pass
+class B(A):         # if we didn't call any of abstract method it will be error
+    def hall(self):
+        print("hall 10X15 ft")
+    def bedrm(self):
+        print("bed_room 10X8 ft")
+b=B()
+b.hall()
+b.bedrm()
+'''
+
+# abstract class 
+'''
+from abc import ABC, abstractmethod
+
+class A(ABC):
+    @abstractmethod
+    def hall(self):
+        pass
+    def bedrm(self):
+        pass
+class B(A):         # here we did't call bedrm cuz its not abstract method
+    def hall(self):
+        print("hall 10X15 ft")
+b=B()
+b.hall()
+'''
+
+#
+'''
+from abc import ABC , abstractmethod
+
+class V(ABC):
+
+    @abstractmethod
+    def whl(self):
+        pass
+    @abstractmethod
+    def gear(self):
+        pass
+    def stand(self):
+        pass
+    
+class Car(V):
+    def whl(self):
+        print("4 wheels")
+    def gear(self):
+        print("5 gear")
+class Bike(V):
+    def whl(self):
+        print("4 wheels")
+    def gear(self):
+        print("5 gear")
+    def stand(self):
+        print("stand avilable")    
+
+c=Car()
+c.whl()
+c.gear()
+c.stand() # no error cuz it will pass on parrent abstract class 
+#
+b=Bike()
+b.whl()
+b.gear()
+b.stand()
+'''
+
+# argument passing 
+'''
+from abc import ABC , abstractmethod
+
+class V(ABC):
+
+    @abstractmethod
+    def whl(self):
+        pass
+    @abstractmethod
+    def gear(self):
+        pass
+    def stand(self):
+        pass
+    
+class Car(V):
+    def whl(self,w):
+        print(f"{w}")
+    def gear(self,g):
+        print(f"{g}")
+class Bike(V):
+    def whl(self,w):
+        print(f"{w}")
+    def gear(self,g):
+        print(f"{g}")
+    def stand(self,s):
+        print(f"{s}")    
+
+c=Car()
+c.whl(4)
+c.gear(5)
+c.stand() # no error cuz it will pass on parrent abstract class 
+#
+b=Bike()
+b.whl(4)
+b.gear(5)
+b.stand(2)
+'''
+
+#instance variable
+# a variable defined within a class for which each created object(instance) has its own separate copy
+# direct
+'''
+class A:
+    def __init__(self):
+        self.x=10
+a=A()
+print(a.__dict__)
+'''
+# using argument and parameter
+'''
+class A:
+    def __init__(self,x):
+        self.x=x
+a=A(10)
+print(a.__dict__)
+'''
+# outside value
+'''
+class A:
+    def __init__(self):
+        pass
+a=A()
+print(a.__dict__)
+a.x=10
+print(a.__dict__)
+'''
+#
+'''
+class A:
+    def __init__(self,n):
+        self.n=n
+        print(self.n)
+a=A(10)
+'''
+
+#
+'''
+class A:
+    def __init__(self,n):
+        self.n=n
+    def display(self):
+        print(self.n)
+a=A(10)
+a.display()
+'''
+# del
+'''
+class A:
+    def __init__(self,n):
+        self.n=n
+        del self.n
+a=A(10)
+print(a.__dict__)
+'''
+# del in another method
+'''
+class A:
+    def __init__(self,n):
+        self.n=n
+    def delete(self):
+        del self.n
+a=A(10)
+print(a.__dict__)
+a.delete()
+print(a.__dict__)
+'''
+
+# outside del
+'''
+class A:
+    def __init__(self,n):
+        self.n=n
+a=A(10)
+print(a.__dict__)
+del a.n
+print(a.__dict__)
+'''
 # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                     Date: 04-04-2026
-
+# saturday -- Mock test
 # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                     Date: 05-04-2026
-
+# holiday - easter 
 
 # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                     Date: 06-04-2026
 
+# class level variable or static variable
+
+# inside of class variable
+'''
+class A:
+    x=10
+    def func(self):
+        print("Yo")
+a=A()
+print(a.__dict__)
+print(A.__dict__)
+'''
+# outside of the class declaring value 
+'''
+class A:
+    def func(self):
+        print("Yo")
+a=A()
+A.x=10
+print(a.__dict__)
+print(A.__dict__)
+'''
+
+# inside of method but not showing in op of A.__dict__
+'''
+class A:
+    def func(self):
+        x=10
+        print(x)
+        print("hi")
+a=A()
+print(a.__dict__)
+print(A.__dict__)
+'''
+
+# self became object of a
+'''
+class A:
+    def func(self):
+        self.x=10
+        print(x)
+        print("hi")
+a=A()
+print(a.__dict__)
+print(A.__dict__)
+'''
+#  A.x is inside of class
+
+'''
+class A:
+    def func(self):
+        A.x=10
+        print("hi")
+a=A()
+a.func()
+print(a.__dict__)
+print(A.__dict__)
+'''
+
+# class method 
+'''
+class A:
+    @classmethod
+    def func(cls):
+        cls.x=10        # its not 
+        print("yo")
+a=A()
+a.func()
+print(a.__dict__)
+print(A.__dict__)
+'''
+# 
+
+'''
+class A:
+    @classmethod
+    def func(cls):
+        A.x=10
+        print("yo")
+a=A()
+a.func()
+print(a.__dict__)
+print(A.__dict__)
+'''
+
 # ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                     Date: 07-04-2026
+# static method only -- neither instance(object) nor class level(static) variable 
+'''
+class A:
+    @staticmethod
+    def func():
+        A.x=10
+        print("hi")
+a=A()
+a.func()
+print(a.__dict__)
+print(A.__dict__)
+'''
+
+# access
+# outside of the class
+'''
+class A:
+    x=10 # it is outside
+    def __init__(self):
+        print(A.x)
+a=A()
+print(a.__dict__)
+print(A.__dict__)
+'''
+# outside the instance method
+'''
+class A:
+    x=10
+    def func(self):
+        print(A.x)
+a=A()
+a.func()
+print(a.__dict__)
+print(A.__dict__)
+'''
+## inside of the class method
+'''
+class A:
+    x=10
+    @classmethod
+    def func(cls):
+        print(cls.x)
+a=A()
+A.func()
+'''
+# inside the instance
+'''
+class A:
+    x=10
+    def func(self):
+        print(A.x)
+a=A()
+A.func()
+'''
+# inside the static method
+'''
+class A:
+    x=10
+    @staticmethod
+    def func():
+        print(A.x)
+a=A()
+a.func()
+'''
+
+### modify
+## outside of the
+# class
+
+'''
+class A:
+    x=10
+a=A()
+print(A.__dict__)
+A.x=50
+print(A.__dict__)
+'''
+# instance
+
+'''
+class A:
+    x=10
+    def func(self):
+        A.x=20
+a=A()
+print(A.__dict__)
+a.func()
+print(A.__dict__)
+'''
+# constructor
+
+'''
+class A:
+    x=10
+    def __init__(self):
+        A.x=50
+a=A()
+print(A.__dict__)
+print(A.__dict__)
+'''
+# class method
+# cls.x
+'''
+class A:
+    x=10
+    @classmethod
+    def func(cls):
+        cls.x=50
+a=A()   # summa or its not working
+print(A.__dict__)
+A.func()
+print(A.__dict__)
+'''
+# A.x
+'''
+class A:
+    x=10
+    @classmethod
+    def func(cls):
+        A.x=50
+a=A()      ## this is summa or not working cuz there is no object
+print(A.__dict__)
+A.func()
+print(A.__dict__)
+'''
+# static
+
+'''
+class A:
+    x=10
+    @staticmethod
+    def func():
+        A.x=50
+a=A()
+print(A.__dict__)
+a.func()
+print(A.__dict__)
+'''
+
+# ## delete
+
+## outside of the
+
+# class
+'''
+class A:
+    x=10
+print(A.__dict__)
+del A.x
+print(A.__dict__)
+'''
+#
+
+## inside of the
+
+# constructor
+
+'''
+class A:
+    x=10
+    def __init__(self):
+        del A.x
+print(A.__dict__)
+a=A()
+print(A.__dict__)
+'''
+
+# instance method
+
+'''
+class A:
+    x=10
+    def func(self):
+        del A.x
+a=A()
+print(A.__dict__)
+a.func()
+print(A.__dict__)
+'''
+
+# @classmethod
+# A.x
+'''
+class A:
+    x=10
+    @classmethod
+    def func(cls):
+        del A.x
+a=A()
+print(A.__dict__)
+A.func()
+print(A.__dict__)
+'''
+# cls.x
+'''
+class A:
+    x=10
+    @classmethod
+    def func(cls):
+        del cls.x
+a=A()
+print(A.__dict__)
+A.func()
+print(A.__dict__)
+'''
+
+# @staticmethod
+
+'''
+class A:
+    x=10
+    @staticmethod
+    def func():
+        del A.x
+a=A()
+print(A.__dict__)
+A.func()
+print(A.__dict__)
+'''
+
+# 
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                     Date: 08-04-2026
+
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                     Date: 09-04-2026
+
+
+# ____________________________________________________________________________________________________________________________________________________________________________________________
+
+#                                                     Date: 10-04-2026
 

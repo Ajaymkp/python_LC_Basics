@@ -1,20 +1,20 @@
 #                                          Date : 24-03-2026  
 
-# to read by s single line
+# to read a single line
 '''
 file=open("aizen.txt", "r")
 a=file.readline()
 print(a)
 file.close()
 '''
-# to read all the lines in a file we can use readlines() method op in list
+# to read all the lines in a file we can use readlines() method -- op in list
 '''
 file=open("aizen.txt", "r")
 a=file.readlines()
 print(a)
 file.close()
 '''
-# upto the num lines op in list
+# upto the num of lines -- op in list
 '''
 file=open("aizen.txt", "r")
 a=file.readlines(2)
@@ -39,7 +39,7 @@ file=open("aizen.txt","w")
 a=file.readable()
 print(a)
 '''
-# how char's in the file
+# how many char's in the file
 '''
 file=open("aizen.txt","r")
 a=file.read()
@@ -75,7 +75,7 @@ a=file.readlines(2)
 a=file.readlines()
 file.close()
 '''
-# seek -- op in showing where the needle 
+# seek -- op in showing where the needle is
 '''
 file=open("aizen.txt","r")
 print(file.read())
