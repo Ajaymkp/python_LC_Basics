@@ -644,3 +644,368 @@ print("main thread is exiting")
 
 #                                                                      Date : 12-04-2026
 # sunday -- holiday
+
+#____________________________________________________________________________________________________________________________________
+
+#  Monday                                                              Date : 13-04-2026
+
+
+# Tradditional method for daemon -- is depriciated
+'''
+from threading import *
+import time
+
+def func():
+    for i in range(5):
+        print("yokoso")
+        time.sleep(1)
+
+
+def display():
+    for i in range(5):
+        print("saakasam no sekai")
+        time.sleep(.5)
+t1=Thread(target=func)
+t1.setDaemon(True)
+t2=Thread(target=display)
+
+t1.start()
+t2.start()
+'''
+#---------------
+### GIL -- Global Interpretor Lock so we use from threading import * to use multithreading
+
+# Race condition
+
+# here we dont use race condition so ticket possibly booked bu both thread
+'''
+from threading import *
+
+avl_seat=2
+
+def booking(seat):
+    global avl_seat
+    if seat<=avl_seat:
+        print(f"bookking successfully {seat} by {current_thread().name}")
+        avl_seat-=seat
+        print(f"{avl_seat} are available")
+    elif seat>avl_seat:
+        print(f"only {avl_seat} but you have booked {seat}")
+        print(f"{avl_seat} are available")
+
+t1=Thread(target=booking,args=(2,),name="Aizen")
+t2=Thread(target=booking,args=(2,),name="Urahara")
+t1.start()
+t2.start()
+
+'''
+
+# Thread syncronization
+
+#   simple lock
+##  rlock
+### semaphore
+
+# Locked
+
+# Once a thread obtains the lock, It goes into the locked state
+## l.acquire() method is used to lock a thread
+
+# Unlocked 
+
+# once a thread releses the lock, It goes into unlocked state
+# l.release() method is used to unlock a thread 
+
+# using l.acquire() and l.release()
+'''
+from threading import *
+
+avl_seat=2
+l=Lock()
+
+def booking(seat):
+    global avl_seat
+    l.acquire()
+    if seat<=avl_seat:
+        print(f"bookking successfully {seat} by {current_thread().name}")
+        avl_seat-=seat
+        print(f"{avl_seat} are available")
+    elif seat>avl_seat:
+        print(f"only {avl_seat} but you have booked {seat}")
+        print(f"{avl_seat} are available")
+    l.release()
+t1=Thread(target=booking,args=(2,),name="Aizen")
+t2=Thread(target=booking,args=(2,),name="Urahara")
+t1.start()
+t2.start()
+'''
+
+# with l
+
+'''
+from threading import *
+
+avl_seat=2
+l=Lock()
+def booking(seat):
+    global avl_seat
+    with l: # it is also work like above l.acquire and l.release()
+        if seat<=avl_seat:
+            print(f"booking successfully {seat} by {current_thread().name}")
+            avl_seat-=seat
+            print(f"{avl_seat} are available")
+        elif seat>avl_seat:
+            print(f"only {avl_seat} but you have booked {seat}")
+            print(f"{avl_seat} are available")
+t1=Thread(target=booking,args=(2,),name="Aizen")
+t2=Thread(target=booking,args=(2,),name="Urahara")
+t1.start()
+t2.start()
+'''
+
+# Multi processing 
+
+# is a python technique where multiple processes run in parallel. 
+
+## Mlti Threading                  --  Multi Processing 
+
+## same memories                   --  Each run with its own memory
+## multi Threading is IO bound     --  Multiprocessing is cpu bound
+## GIL is affecting                --  GIL is not affecting
+
+#  
+
+'''
+import multiprocessing
+
+def func():
+    for i in range(5):
+        print("Yokoso")
+
+def display():
+    for i in range(5):
+        print("Sakasama no sekai")
+
+if __name__=="__main__":
+    p1=multiprocessing.Process(target=func)
+    p2=multiprocessing.Process(target=display)    # if we using this line we have to import multiprocessing
+    p1.start()
+    p2.start()
+'''
+#
+'''
+from multiprocessing import *
+import time
+
+def func():
+    print(f"start processing {current_process().name}")
+    time.sleep(2)
+    print(f"end processing {current_process().name}")
+
+if __name__ == "__main__" :
+    p1=Process(target=func,name="Nel")
+    p2=Process(target=func,name="ichigo")
+
+    p1.start()
+    p2.start()
+'''
+#  Process() with join and without also
+'''
+from multiprocessing import *
+import time
+
+def func(n):
+    print(f"{n} start processing {current_process().name}")
+    time.sleep(2)
+    print(f"{n} end processing {current_process().name}")
+
+if __name__ == "__main__" :
+    p1=Process(target=func,name="Nel",args=[1])
+    p2=Process(target=func,name="ichigo",args=[2])
+
+    p1.start()
+    p1.join()
+    p2.start()
+
+'''
+
+# with and pool -- multiprocessing if we did  more inputs (like 10000000) it will be faster 
+'''
+from multiprocessing import *
+import os
+import time
+def func(n):
+    time.sleep(1)
+    print(f"{os.getpid()} it runs to {n}")
+    return n**2
+if __name__=="__main__":
+    num=[1,2,3,4,5]
+    with Pool(processes=2) as p:   # here it automatically create processes pool(processes=x?)
+        res=p.map(func,num)
+    print("answer =",res)
+'''   
+
+#____________________________________________________________________________________________________________________________________
+
+#                                                                      Date : 14-04-2026
+
+from multiprocessing import *
+import os
+import time
+import math
+
+# math.fctorial
+'''
+def func(n):
+    print(f"{n} factorial of {math.factorial(n)} in {os.getpid()} ")
+
+if __name__ == "__main__":
+    p1=Process(target=func,args=[5])
+    p2=Process(target=func,args=[4])
+    p1.start()
+    p2.start()
+'''
+# 
+'''
+def func():
+    for i in range(5):
+        print("Onepiece")
+def display():
+    for i in range(5):
+        print("DragonBall")
+if __name__=="__main__":
+    p1=Process(target=func)
+    p2=Process(target=display)
+    p1.start()
+    # p1.join()
+    p2.start()
+'''
+# factorial with for loop and for loop join
+'''
+def func(n):
+    print(f"{n} factorial of {math.factorial(n)} in {os.getpid()}")
+
+if __name__=="__main__":
+
+    num=[5,4,3,6]
+    pro=[]
+    for i in num:
+        p=Process(target=func,args=(i,))
+        pro.append(p)
+        p.start()
+    for j in pro:
+        j.join()  # it will wait for all the processes to complete and then it will print the answer
+    print("All processes are completed")  # it will print after all the processes are completed
+'''   
+# same func but with pool method
+'''
+def func(n):
+    time.sleep(1)
+    print(f"{n} factorial of {math.factorial(n)} in {os.getpid()}")
+
+if __name__=="__main__":
+
+    num=[5,4,7,8,3,2,6,12,13, 14,15,16]
+    with Pool(processes=4) as p: # 4 process only
+        res=p.map(func,num)
+'''
+
+#  q=Queue() -- x.put(i) and x.get()
+'''
+def put_data(m):
+    a=[4,5,6,7,8]
+    for i in a:
+        m.put(i)  # putting data one by one  in q=Queue()
+def get_data(n):
+    while not n.empty():
+        print("get data",n.get()) # one by one gettting
+if __name__=="__main__":
+    q=Queue()
+    p1=Process(target=put_data,args=(q,))
+    p2=Process(target=get_data,args=(q,))
+    p1.start()
+    p2.start()
+'''
+#
+'''
+def put_data(m):
+    a=[4,5,6,7,8]
+    for i in a:
+        m.put(i)  # putting data one by one  in q=Queue()
+def get_data(n):
+    while not n.empty():
+        print("get data",n.get())
+if __name__=="__main__":
+    q=Queue()
+    p1=Process(target=put_data,args=(q,))
+    p2=Process(target=get_data,args=(q,))
+    p1.start()
+    p1.join()           # but here one by one all are putting
+    p2.start()          # after one one by one we getting
+    p2.join()
+    print("All processes are completed") # last it will print
+    '''
+
+
+# Tea Master
+import random
+
+
+# mormal
+'''
+def tea(n):
+    print(f"customer{n} order a tea and the order taken by {os.getpid()}")
+    time.sleep(random.randint(1,3))
+    print(f"order placed to {n} and prepared by {os.getpid()}")
+
+if __name__=="__main__":
+    a=[1,2,3,4,5]
+    with Pool(processes=3) as p:
+        res=p.map(tea,a)
+'''
+# with queue
+def get_tea(q): 
+    while not q.empty():
+        a=q.get()
+        print(f"customer {a} ordered a tea. order taken by {os.getpid()}")
+        time.sleep(random.randint(1,3))
+        print(f"order placed to {a} and prepared by {os.getpid()}")
+    
+
+if __name__=="__main__":
+    a=[1,2,3,4,5]
+    q=Queue()
+    for i in a:
+        q.put(i)
+    p1=Process(target=get_tea,args=(q,))
+    p2=Process(target=get_tea,args=(q,))
+    p3=Process(target=get_tea,args=(q,))
+    p1.start()
+    p2.start()
+    p3.start()
+
+
+# queue with pool not completed
+'''
+def put_tea(q):
+    
+    print(f"customer{q.put()} order a tea and the order taken by {os.getpid()}")
+    
+def get_tea(q):
+    while not q.empty():
+        time.sleep(random.randint(1,3))
+        print(f"order placed to {q.get()} and prepared by {os.getpid()}")
+
+if __name__=="__main__":
+    q=Queue()
+    a=[1,2,3,4,5]
+    for i in a:
+        q.put(i)
+    
+    with Pool(processes=3) as p:
+        p.apply_async(put_tea,args=(q,))
+        p.apply_async(get_tea,args=(q,))    
+'''
+
+#____________________________________________________________________________________________________________________________________
+

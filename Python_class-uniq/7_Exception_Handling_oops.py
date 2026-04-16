@@ -1,6 +1,6 @@
 #     Exception Handling                                          Date: 16-03-2026
 
-# Its allow to gracefully handleruntime error
+# Its allow to gracefully handle runtime error
 # in the python program without crashing program.
 
 ## only one try block but multiple except block.
