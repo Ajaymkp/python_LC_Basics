@@ -263,7 +263,31 @@ asyncio.run(main())
 
 '''
 
+# Another Method
+'''
+async def put_data(q):
+    for i in range(5):
+        await asyncio.sleep(1)  # simulating the time taken to put data into the queue
+        await q.put(i)  # to put data into the queue
+        print(f"Putting data {i} into the queue")
 
+async def get_data(q):
+    while True:
+        await asyncio.sleep(1)  # simulating the time taken to get data from the queue
+        print(f"Getting data {await q.get()} from the queue")
+        q.task_done()  # to indicate that the task is done and the queue can move on to the next task
+async def main():
+    q=asyncio.Queue()  # to create a queue for communication between coroutines
+    await asyncio.sleep(1)
+    t1=asyncio.create_task(put_data(q))
+    t2=asyncio.create_task(get_data(q))
+
+    await t1,t2
+    
+    print("The End")
+
+asyncio.run(main())
+'''
 
 #____________________________________________________________________________________________________________________________________
 
