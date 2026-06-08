@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Django</h1>
+    <h1>{{name}}</h1>
+    {{topic}}
+
+    {% if name == "django" %}
+        <h1>its {{name}}</h1>
+    {% endif %}
+
+
+    {% if name == "flask" %}
+        <h1>its flask</h1>
+    {% else %}
+        <h1>condition false</h1>
+    {% endif %}
+
+
+    {% for i in a %}
+    {{i}}<br>
+    {% endfor %}
+
+
+    
+</body>
+</html>
