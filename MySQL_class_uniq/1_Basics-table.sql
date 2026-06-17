@@ -1957,7 +1957,7 @@ call perfect(6);
 call perfectt(7);
 
 -- composite primary key
--- It means have more than one primary key
+-- It means have more than one primary key -- with inter connected two columns 
 
 -- minimal key
 -- primary key(student_id,course_id)
@@ -1970,9 +1970,18 @@ call perfectt(7);
 -- surrogate key
 -- where key is undefined in table,if we want we can use auto_increment 
 
--- congrate key
+
+-- canditate key
+
+-- all primary keys are candidate key 
+-- all cadidate keys are composite keys
+
+-- cumpolsary that column only present then primaary key constraints followa that key aare candidate keys
 
 -- super key
+-- all primary kesy are super key
+-- all candidate keys are super key
+
 
 -- _____________________________________________________________________________________________________________________________________________-- 
 --                                        Date : 19-05-2026
@@ -2136,12 +2145,172 @@ select * from orde o where o.cust_id=c.id);
 -- _____________________________________________________________________________________________________________________________________________-- 
 --                                        Date : 20-05-2026
 
+use batch78;
+set sql_safe_updates=0;
+
+-- cte - common table expression -- can not uase in where clause
+
+with abc as(select name,dept,salary from batch78 where dept="dev")
+select * from abc where salary > 33000;
+
+-- cluster index  - which  can be used in where uniue or primary key  -- only one can be added in a table
+-- non cluster index - any number of can be added in a table
+--
+
+create index idx on employee(id);
+drop index idx on employee;
+select * from employee where id=5;
+explain analyze select * from employee where id=7;
+
+--       Advantages                              Disadvantages
+
+--       faster in 
+
+-- cluster index
+
+-- can't use in built in function
+-- in small table use is waste cuz time diff is low
+-- primary key have default index in it
+
+
+-- ACID -- Atomicity , Consistency , Isolation , Durability
+
+-- Atomicity (All or nothing)
+--  if transaction means either full commit or full rollback
+
+-- Consistency (valid rules)
+-- maintain the database valid rules
+
+-- Isolation (independent)  (no interference)
+-- do not iterfere when multibple transaction happenning -- eg flight ticket booking
+
+-- Durability (permanent save )
+-- Guarantees the transaction once commited are must be permanently saved  even server crash
+
+-- why ACID property 
+
+-- prevents partial updates, Data curruption, Concurrency issue.  
+
+
+-- Normalization 
+
+-- reduandancy, update anomaly, insert anomaly, delete anomaly
+
+-- Types 
+
+-- 1 NF (normal form)
+-- each column shold contains atomic values (single values) (multiple values are not allowed)
+
+-- 2 NF (normal form)
+-- must be in 1 NF , no paartial dependency 
+
+-- 3 NF (normal form)
+-- must be in 2 NF, Have no transitive dependencies
+-- remove indirect dependency
+
+-- boyce-CODD NF - BCNF (normal form)
+-- strict version of 3NF , Aso called 3.5 NF
+-- every determinant shoud be candidate key
+-- table has multiple overlapping candidate key 
+-- for every functional dependency and every deprndency must be super key
+
+-- 4 NF 
+-- remove multiple values dependencies
+
+-- 5 NF (rarely used very advanced)
+-- remove joined dependency
+
+-- Normalization NF Advantages
+
+-- Less duplicates
+-- better consistentcy
+
+-- NF Disadavantages
+
+-- more joins becomes more complex 
+-- reads slowly cuz too many tables 
+
+-- DeNormalization
+-- Reads easily and analyzing also easy
+
+-- 1 NF -- Multiple values are removed 
+-- 2 NF -- no partial dependency
+-- 3 NF -- no transitive dependency
+-- BCNF NF -- strict version of 3 NF
+-- 4 NF -- multivalue dependency
+-- 5 NF -- remove join 
+
+select dept,avg(salary) from batch78 group by dept;
+
+
 -- _____________________________________________________________________________________________________________________________________________-- 
 --                                        Date : 21-05-2026
 -- sem - exam -- leave
--- _____________________________________________________________________________________________________________________________________________-- 
---                                        Date : 22-05-2026
--- sem - exam -- leave
 
+-- grand
+
+select * from mysql.user;
+
+create user "Anbu"@"localhost" identified by "Anbu@1808";
+select * from mysql.user;
+
+show grants for "root"@"localhost";
+show grants for "Anbu"@"localhost";
+grant select on batch78.* to "Anbu"@"localhost";
+select * from mysql.user;
+show grants for "Anbu"@"localhost";
+grant insert on batch78.* to "Anbu"@"localhost";
+show grants for "Anbu"@"localhost";
+grant update,delete on batch78.* to "Anbu"@"localhost";
+show grants for "Anbu"@"localhost";
+
+grant all privileges on batch78.* to "Anbu"@"localhost" with grant option;
+
+create user "Selvam"@"localhost" identified by "Selvam@1808";
+show grants for "Selvam"@"localhost";
+
+-- revoke
+
+revoke all privileges,grant option from "Anbu"@"localhost";
+show grants for "Anbu"@"localhost";
+
+grant select on batch78.* to "Anbu"@"localhost";
+show grants for "Anbu"@"localhost";
+
+revoke select on batch78.* from "Anbu"@"localhost";
+show grants for "Anbu"@"localhost";
+
+-- change the table name
+alter table bat rename to batch78;
+select * from batch78;
+
+-- user name change
+
+update mysql.user set user="Anbuuu" where user="Anbu";
+select user,host from mysql.user;
+
+-- password change
+
+alter user  "Anbuuu"@"localhost" identified by "Anbu@18082002";
+
+drop user "Selvam"@"localhost";
+select user,host from mysql.user;
+
+
+
+-- view 
+
+use batch78;
+select * from batch78;
+
+create view less25 as select * from batch78 where age>25;
+
+
+
+
+-- ______________________________________________________________________________________________________________________________________________________
+-- ______________________________________________________________________________________________________________________________________________________
+
+create database django;
 
 

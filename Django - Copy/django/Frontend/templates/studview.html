@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>student details</h1>
+    <h1><a href="{% url 'add' %}">add student</a></h1>
+    {{alldata}}
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>BATCH</td>
+            <td>UPDATE</td>
+            <td>DELETE</td>
+        </tr>
+        {% for i in alldata %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.batch}}</td>
+            <td><a href="{% url 'update' i.id %}">update</a></td>
+            <td>delete</td>
+        </tr> 
+        {% endfor %}
+
+    </table>
+</body>
+</html>

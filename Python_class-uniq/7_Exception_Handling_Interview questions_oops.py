@@ -237,18 +237,18 @@ for i in a:
 '''
 #7  Missing Sequence Numbers -- op -- [4,6]
 
-'''
-x=[1,2,3,5,7,8,10]
+''' '''
+x=[1,2,3,5,7]
 ##x=[1,5,9] -- need z=x[i]+1
 y=[]
 z=x[0]
 for i in range(len(x)):
     if x[i] != z:
         y.append(z)
-    print(z,y)
+    print(x[i],z,y)
     z=x[i]+1
     
-'''
+''' '''
 ### ____________________________________________________________________________________________________________________________________________________________________________________________
 
 #                                                      Date: 18-03-2026
@@ -342,7 +342,7 @@ print(b)
 # Slightly differnece
 
 
-''''''
+'''
 a="aaabcddabbef"
 b=""
 s=a[0]
@@ -350,7 +350,7 @@ for i in range(1,len(a)):
     if a[i] != a[i-1]:
         s+=a[i]
 print(s)
-''''''
+'''
 
 #12 op -- [[1,1,1],[2,2],[3,3,3],[4,4,4]]
 '''
@@ -568,7 +568,7 @@ print(is_valid(a))
 
 '''
 
-''''''
+'''
 def is_valid(s):
     # Map closing brackets to their corresponding opening brackets
     mapping = {")": "(", "}": "{", "]": "["}
@@ -595,7 +595,7 @@ a = ["(", ")", "[", "]", "{", "}"]
 # Note: Input usually comes as a string like "()[]{}"
 print(is_valid(a))
 
-''' '''
+'''
 
 # Another Method failure
 '''

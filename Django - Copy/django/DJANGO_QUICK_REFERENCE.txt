@@ -1,0 +1,190 @@
+================================================================================
+                    DJANGO QUICK REFERENCE COMMANDS
+================================================================================
+
+Date Created: June 3, 2026
+Purpose: Quick reference guide for Django development
+
+================================================================================
+QUICK COMMAND REFERENCE
+================================================================================
+
+Task                          | Command
+================================================================================
+Create virtual environment    | python -m venv .venv
+
+Activate venv (PowerShell)    | .\.venv\Scripts\Activate.ps1
+
+Activate venv (CMD)           | .venv\Scripts\activate.bat
+
+Activate venv (Mac/Linux)     | source .venv/bin/activate
+
+Install Django + MySQL        | pip install django mysqlclient
+
+Upgrade pip                   | python -m pip install --upgrade pip
+
+Create Django project         | django-admin startproject djproject .
+
+Create Django app             | python manage.py startapp myapp
+
+Migrate database              | python manage.py migrate
+
+Make migrations               | python manage.py makemigrations
+
+Show migrations status        | python manage.py showmigrations
+
+Create admin user             | python manage.py createsuperuser
+
+Run development server        | python manage.py runserver
+
+Run server on port 8080       | python manage.py runserver 8080
+
+Open Django shell             | python manage.py shell
+
+Check for issues              | python manage.py check
+
+Access Admin Panel            | http://localhost:8000/admin
+
+Save dependencies             | pip freeze > requirements.txt
+
+Install from requirements     | pip install -r requirements.txt
+
+List installed packages       | pip list
+
+================================================================================
+DATABASE CONFIGURATION
+================================================================================
+
+MYSQL DATABASE SETUP (djproject/settings.py):
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django',              # Database name
+        'USER': 'root',                # MySQL user
+        'PASSWORD': 'your_password',   # MySQL password
+        'HOST': 'localhost',           # Server host
+        'PORT': '3306',                # MySQL port
+    }
+}
+
+Test MySQL Connection:
+mysql -u root -p
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+ERROR 1045: Access Denied for MySQL
+Problem: django.db.utils.OperationalError: (1045, "Access denied for user 'root'@'localhost'")
+
+Solution:
+1. Verify MySQL password: mysql -u root -p
+2. Update PASSWORD in djproject/settings.py
+3. Run migrations again: python manage.py migrate
+
+Module Not Found Error:
+pip install -r requirements.txt
+
+Port Already in Use:
+python manage.py runserver 8080
+
+Can't Activate Virtual Environment (PowerShell):
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+.\.venv\Scripts\Activate.ps1
+
+================================================================================
+COMPLETE SETUP SEQUENCE
+================================================================================
+
+1. Create virtual environment:
+   python -m venv .venv
+
+2. Activate virtual environment:
+   .\.venv\Scripts\Activate.ps1
+
+3. Upgrade pip:
+   python -m pip install --upgrade pip
+
+4. Install dependencies:
+   pip install django mysqlclient
+
+5. Create Django project:
+   django-admin startproject djproject .
+
+6. Create Django app (optional):
+   python manage.py startapp myapp
+
+7. Configure database in settings.py (if using MySQL)
+
+8. Run migrations:
+   python manage.py migrate
+
+9. Create superuser:
+   python manage.py createsuperuser
+
+10. Run development server:
+    python manage.py runserver
+
+11. Access admin panel:
+    http://localhost:8000/admin
+
+================================================================================
+PROJECT STRUCTURE
+================================================================================
+
+django_project/
+├── .venv/                  # Virtual environment
+├── db.sqlite3              # SQLite database (default)
+├── manage.py               # Django management script
+├── djproject/              # Project settings folder
+│   ├── __init__.py
+│   ├── settings.py         # Configuration file
+│   ├── urls.py             # URL routing
+│   ├── asgi.py
+│   └── wsgi.py
+└── myapp/                  # Django application
+    ├── __init__.py
+    ├── models.py           # Database models
+    ├── views.py            # View logic
+    ├── urls.py             # App URLs
+    ├── admin.py            # Admin configuration
+    ├── forms.py            # Forms
+    ├── tests.py
+    └── migrations/         # Database migrations
+
+================================================================================
+TIPS & NOTES
+================================================================================
+
+1. Always activate virtual environment before working on Django project
+2. Install mysqlclient BEFORE running migrations with MySQL
+3. Always verify MySQL password before running migrations
+4. Use different ports if port 8000 is already in use
+5. Keep requirements.txt updated: pip freeze > requirements.txt
+6. Register apps in INSTALLED_APPS in settings.py
+7. Run migrations after creating or modifying models
+8. Create superuser to access Django admin panel
+9. Use django-admin for project-level operations
+10. Use manage.py for app-level operations
+
+================================================================================
+IMPORTANT URLS
+================================================================================
+
+Local Development Server: http://localhost:8000/
+Admin Panel:              http://localhost:8000/admin/
+API Endpoint:             http://localhost:8000/api/
+
+================================================================================
+USEFUL LINKS
+================================================================================
+
+Django Documentation: https://docs.djangoproject.com/
+Django REST Framework: https://www.django-rest-framework.org/
+MySQL Documentation:  https://dev.mysql.com/doc/
+Python Documentation: https://docs.python.org/
+
+================================================================================
+LAST UPDATED: June 3, 2026
+================================================================================
