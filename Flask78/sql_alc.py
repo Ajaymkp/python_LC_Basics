@@ -15,6 +15,12 @@ class Bike(db.Model):
     name = db.Column(db.String(20))
     price = db.Column(db.Integer)
 
+    def __repr__(self):
+        return f"<Bike id={self.id} name={self.name!r} price={self.price}>"
+
+    # def __str__(self):
+    #     return f"Bike: id:{self.id} name:{self.name} price:{self.price}"
+
 with app.app_context():
     db.create_all()
 

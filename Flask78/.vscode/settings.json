@@ -1,3 +1,4 @@
 {
-    "chat.editRequests": "none"
+    "chat.editRequests": "none",
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }
